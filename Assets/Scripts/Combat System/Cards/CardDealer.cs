@@ -11,7 +11,7 @@ public class CardDealer : MonoBehaviour
     [SerializeField]
     private List<Card> availableCards;
 
-    private void DealCards(int amount)
+    public void DealCards(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
@@ -20,7 +20,7 @@ public class CardDealer : MonoBehaviour
         }
     }
 
-    private void DealCards(int amount, AttackColorTypes type)
+    public void DealCards(int amount, AttackColorTypes type)
     {
         for (int i = 0; i < amount; i++)
         {
@@ -44,5 +44,10 @@ public class CardDealer : MonoBehaviour
         int amountTypes = Enum.GetNames(typeof(AttackColorTypes)).Length;
         int colorTypeId = UnityEngine.Random.Range(0, amountTypes);
         return (AttackColorTypes)colorTypeId;
+    }
+
+    public void ClearHand()
+    {
+        inventory.ClearInventory();
     }
 }

@@ -23,4 +23,9 @@ public class CardInventory : MonoBehaviour
     {
         cards.RemoveAt(cardId);
     }
+
+    public void ClearInventory()
+    {
+        cards.Clear();
+    }
 }

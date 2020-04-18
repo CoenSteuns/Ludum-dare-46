@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
-    private CombatEnemy currentEnemy;
-    private CombatPlayer currentPlayer;
+    private CombatCharacter[] characters;
 
-    private void StartBattle()
+    private void Start()
+    {
+        StartBattle();
+    }
+
+    public void StartBattle()
+    {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            characters[i].StartBattle(this);
+        }
+    }
+
+    public void End()
     {
 
     }
