@@ -23,6 +23,8 @@ public class DrawPath : MonoBehaviour {
     public event Action<List<Vector3>> OnPathChanged;
     public event Action<List<Vector3>> OnPathFinished;
 
+    public event Action<bool> OnIsDrawingChange;
+
     public List<Vector3> Path => path;
     public bool AllowDraw { get; set; } = true;
     public bool IsDrawing { get; private set; } = false;
@@ -30,7 +32,11 @@ public class DrawPath : MonoBehaviour {
     private void Update() {
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && AllowDraw && (startPosition == null || startPosition.MouseOver) && !IsDrawing)
+        {
+            IsDrawing = true;
+            OnIsDrawingChange?.Invoke(IsDrawing);
             path.Clear();
+        }
 
         if (AllowDraw && Input.GetMouseButton(0) && raycaster.SendRay(out hit)) {
 
@@ -42,17 +48,18 @@ public class DrawPath : MonoBehaviour {
 
             if (hit.collider.CompareTag(FINISH_TAG)) {
                 IsDrawing = false;
+                OnIsDrawingChange?.Invoke(IsDrawing);
                 lastPoint = null;
                 OnPathFinished?.Invoke(path);
                 return;
             }
 
-            IsDrawing = true;
             path.Add(hit.point);
             lastPoint = hit.point;
             OnPathChanged?.Invoke(path);
         } else if (Input.GetMouseButtonUp(0) && IsDrawing) {
             IsDrawing = false;
+            OnIsDrawingChange?.Invoke(IsDrawing);
             lastPoint = null;
             OnPathFinished?.Invoke(path);
         }

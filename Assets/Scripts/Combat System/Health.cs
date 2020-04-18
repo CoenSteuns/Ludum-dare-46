@@ -30,7 +30,7 @@ public class Health : MonoBehaviour {
 
     public void SetHealth(int newHealth) {
 
-        newHealth = Math.Min(0, Math.Max(maxHealth, newHealth));
+        newHealth = Math.Max(0, Math.Min(maxHealth, newHealth));
 
         if (newHealth == current)
             return;
