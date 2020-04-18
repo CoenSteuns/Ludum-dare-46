@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
 public class CombatEnemy : MonoBehaviour
 {
     [SerializeField]
     private AttackColorTypes clanType;
 
-    [SerializeField]
-    private int maxHealth = 100;
-
-    [SerializeField]
-    private int currentHealth;
+    private Health health;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        health.SetHealth(health.Max);
     }
 }
