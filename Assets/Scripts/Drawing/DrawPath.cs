@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DrawPath : MonoBehaviour {
 
+    private const string FINISH_TAG = "DrawObstacle";
+
     [SerializeField]
     private MouseRaycaster raycaster;
 
@@ -36,6 +38,13 @@ public class DrawPath : MonoBehaviour {
 
             if (!IsDrawing && startPosition != null && !startPosition.MouseOver) // check for start position
                 return;
+
+            if (hit.collider.CompareTag(FINISH_TAG)) {
+                IsDrawing = false;
+                lastPoint = null;
+                OnPathFinished?.Invoke(path);
+                return;
+            }
 
             IsDrawing = true;
             path.Add(hit.point);

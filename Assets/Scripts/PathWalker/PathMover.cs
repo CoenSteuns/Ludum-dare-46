@@ -14,6 +14,10 @@ public class PathMover : MonoBehaviour {
 
     public DrawPath path;
 
+    public bool ignoreX = false;
+    public bool ignoreY = false;
+    public bool ignoreZ = false;
+
     private void Awake() {
         path.OnPathFinished += (path) => WalkPath(path.ToArray());
     }
@@ -79,7 +83,9 @@ public class PathMover : MonoBehaviour {
     }
 
     private void SetPosition(Vector3 newPosition) {
-        newPosition.y = transform.position.y;
+        newPosition.x = ignoreX ? transform.position.x : newPosition.x;
+        newPosition.y = ignoreY ? transform.position.y : newPosition.y;
+        newPosition.z = ignoreZ ? transform.position.z : newPosition.z;
         transform.position = newPosition;
     }
 
