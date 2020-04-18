@@ -42,14 +42,18 @@ public class PathMover : MonoBehaviour {
     public IEnumerator WalkPathRoutine(Vector3[] path) {
 
         Vector3[] pathLeft = Path;
-        float pathSize = CalculatePathSize();
         float walkedPath = 0;
         int currentPart = 0;
 
-        while (walkedPath < pathSize) {
+        while (true) {
 
             float restPath;
             currentPart = FindCurrentPart(path, walkedPath, out restPath, currentPart);
+
+            if (restPath < 0) {
+                transform.position = Path[currentPart];
+                break;
+            }
 
             Vector3 dir = (Path[currentPart + 1] - Path[currentPart]).normalized;
             transform.position = Path[currentPart] + dir * restPath;
@@ -70,15 +74,8 @@ public class PathMover : MonoBehaviour {
             walkedPath -= partDistance;
             restPathLeft = walkedPath;
         }
-        return 0;
-    }
-
-    private float CalculatePathSize() {
-        float size = 0;
-        for (int i = 1; i < Path.Length; i++) {
-            size += Vector3.Distance(Path[i - 1], Path[i]);
-        }
-        return size;
+        restPathLeft = -1;
+        return Path.Length - 1;
     }
 
 }
