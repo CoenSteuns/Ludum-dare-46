@@ -8,24 +8,33 @@ public class CardInventory : MonoBehaviour
     private List<Card> cards;
     public Action OnCardAdded;
 
+    public List<Card> Cards => cards;
     public void AddCard(Card card)
     {
-        cards.Add(card);
+        Cards.Add(card);
         OnCardAdded?.Invoke();
     }
 
     public void RemoveCard(Card card)
     {
-        cards.Remove(card);
+        Cards.Remove(card);
     }
 
     public void RemoveCard(int cardId)
     {
-        cards.RemoveAt(cardId);
+        Cards.RemoveAt(cardId);
     }
 
     public void ClearInventory()
     {
-        cards.Clear();
+        Cards.Clear();
+    }
+
+    public void ActivateCards(bool active)
+    {
+        foreach (var card in Cards)
+        {
+            card.enabled = active;
+        }
     }
 }

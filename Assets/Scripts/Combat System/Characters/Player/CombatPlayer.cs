@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CombatPlayer : CombatCharacter
 {
+
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
@@ -13,12 +14,13 @@ public class CombatPlayer : CombatCharacter
 
     public override void StartTurn()
     {
-        throw new System.NotImplementedException();
+        inventory.ActivateCards(true);
     }
 
     public override void EndTurn()
     {
         dealer.DealCards(1);
+        inventory.ActivateCards(false);
     }
 
     protected override void CheckHealth()
