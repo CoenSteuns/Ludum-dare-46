@@ -59,7 +59,7 @@ public class PathMover : MonoBehaviour {
         }
     }
 
-    public int FindCurrentPart(Vector3[] path, float walkedPath, out float restPathLeft, int startIndex = 0) {
+    private int FindCurrentPart(Vector3[] path, float walkedPath, out float restPathLeft, int startIndex = 0) {
         restPathLeft = walkedPath;
         for (int i = 1; i < Path.Length; i++) {
             float partDistance = Vector3.Distance(Path[i - 1], Path[i]);
