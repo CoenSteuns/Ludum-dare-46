@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
-public class Card : MonoBehaviour
+public abstract class Card : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite cardImage;
-
     [SerializeField]
     private CardInfo info;
 
-    
-    public Sprite CardImage => cardImage;
+    public CardInfo Info => info;
 
-    private void Use(Battle battle)
-    {
-        
-    }
+    public abstract void Use(Battle battle);
 }

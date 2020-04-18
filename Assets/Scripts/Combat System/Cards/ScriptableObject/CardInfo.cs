@@ -6,11 +6,17 @@ using UnityEngine;
 public class CardInfo: ScriptableObject
 {
     [SerializeField]
+    private Sprite cardImage;
+    [SerializeField]
     private string cardTitle;
+    [SerializeField]
+    private string cardDescription;
     [SerializeField]
     private AttackColorTypes color;
 
-    public AttackColorTypes Attack => color;
+    public Sprite CardImage => cardImage;
+    public AttackColorTypes Color => color;
     public string CardTitle => cardTitle;
+    public string CardDescription => cardDescription;
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombatEnemy : MonoBehaviour
 {
     [SerializeField]
-    private AttackTypes clanType;
+    private AttackColorTypes clanType;
 
     [SerializeField]
     private int maxHealth = 100;
