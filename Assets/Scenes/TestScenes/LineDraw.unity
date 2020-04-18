@@ -561,6 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycaster: {fileID: 1864124639}
+  minimumChangeSize: 0.03
 --- !u!1 &1972238681
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +574,7 @@ GameObject:
   - component: {fileID: 1972238684}
   - component: {fileID: 1972238683}
   - component: {fileID: 1972238682}
+  - component: {fileID: 1972238686}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -654,3 +656,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972238686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972238681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e52384830c858c439aa27a2c557da0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  path: {fileID: 1864124644}
