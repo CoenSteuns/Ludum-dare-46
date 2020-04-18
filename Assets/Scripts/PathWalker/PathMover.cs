@@ -12,15 +12,12 @@ public class PathMover : MonoBehaviour {
 
     public Vector3[] Path { get; private set; }
 
-    public DrawPath path;
-
     public bool ignoreX = false;
     public bool ignoreY = false;
     public bool ignoreZ = false;
 
-    private void Awake() {
-        path.OnPathFinished += (path) => WalkPath(path.ToArray());
-    }
+    public event Action OnStartedWalking;
+    public event Action OnStoppedWalking;
 
     public void SetPath(Vector3[] path) {
         StopWalking();
@@ -33,21 +30,27 @@ public class PathMover : MonoBehaviour {
     }
 
     public void StartWalking() {
+
         walkRoutine = StartCoroutine(WalkPathRoutine(Path));
     }
 
     public void StopWalking() {
         if (walkRoutine == null)
             return;
+
+        OnStoppedWalking?.Invoke();
         StopCoroutine(walkRoutine);
         walkRoutine = null;
     }
 
     public IEnumerator WalkPathRoutine(Vector3[] path) {
-
-        Vector3[] pathLeft = Path;
         float walkedPath = 0;
         int currentPart = 0;
+
+        if (path.Length == 0)
+            yield break;
+
+        OnStartedWalking?.Invoke();
 
         while (true) {
 
@@ -55,16 +58,18 @@ public class PathMover : MonoBehaviour {
             currentPart = FindCurrentPart(path, walkedPath, out restPath, currentPart);
 
             if (restPath < 0) {
-                SetPosition(Path[currentPart]);
+                SetPosition(path[currentPart]);
                 break;
             }
 
-            Vector3 dir = (Path[currentPart + 1] - Path[currentPart]).normalized;
-            SetPosition(Path[currentPart] + dir * restPath);
+            Vector3 dir = (path[currentPart + 1] - path[currentPart]).normalized;
+            SetPosition(path[currentPart] + dir * restPath);
 
             walkedPath += speed;
             yield return null;
         }
+
+        OnStoppedWalking?.Invoke();
     }
 
     private int FindCurrentPart(Vector3[] path, float walkedPath, out float restPathLeft, int startIndex = 0) {
