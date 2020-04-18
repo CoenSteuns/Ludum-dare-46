@@ -51,12 +51,12 @@ public class PathMover : MonoBehaviour {
             currentPart = FindCurrentPart(path, walkedPath, out restPath, currentPart);
 
             if (restPath < 0) {
-                transform.position = Path[currentPart];
+                SetPosition(Path[currentPart]);
                 break;
             }
 
             Vector3 dir = (Path[currentPart + 1] - Path[currentPart]).normalized;
-            transform.position = Path[currentPart] + dir * restPath;
+            SetPosition(Path[currentPart] + dir * restPath);
 
             walkedPath += speed;
             yield return null;
@@ -76,6 +76,11 @@ public class PathMover : MonoBehaviour {
         }
         restPathLeft = -1;
         return Path.Length - 1;
+    }
+
+    private void SetPosition(Vector3 newPosition) {
+        newPosition.y = transform.position.y;
+        transform.position = newPosition;
     }
 
 }
