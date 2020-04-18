@@ -1,4 +1,4 @@
-﻿public enum AttackTypes
+﻿public enum AttackColorTypes
 {
     orange,
     blue,

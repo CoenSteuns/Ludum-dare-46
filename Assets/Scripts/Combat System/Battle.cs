@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
-    //private Enemy currentEnemy;
+    private CombatEnemy currentEnemy;
     
 }

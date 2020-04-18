@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 public class Card : MonoBehaviour
 {
     [SerializeField]
     private Sprite cardImage;
 
     [SerializeField]
-    private string cardTitle;
-    [SerializeField]
-    private AttackTypes attack;
-    [SerializeField]
-    private int damageAmount;
+    private CardInfo info;
 
-    public int DamageAmount { get => damageAmount; }
-    public AttackTypes Attack { get => attack; }
-    public string CardTitle { get => cardTitle; }
-    public Sprite CardImage { get => cardImage; }
+    
+    public Sprite CardImage => cardImage;
 
     private void Use(Battle battle)
     {
-
+        
     }
 }
