@@ -34,6 +34,8 @@ public class FieldOfView : MonoBehaviour {
 	[SerializeField]private GameObject mainCamera;
 	private MonoBehaviour drawPath;
 
+	private CombatCharacter[] characters;
+
 	void Start() {
 		drawPath = mainCamera.GetComponent<DrawPath>();
 
@@ -70,7 +72,12 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, targetTransform.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (targetTransform);
-
+					var battlePlayer = targetObject.GetComponent<CombatPlayer>();
+					var battleGuard = GetComponent<CombatEnemy>();
+					var battleStart = CombatUI.GetComponent<Battle>();
+					characters[0] = battlePlayer;
+					characters[1] = battleGuard;
+					battleStart.StartBattle(characters);
 					drawPath.enabled = false;
 					CombatUI.SetActive(true);
 
