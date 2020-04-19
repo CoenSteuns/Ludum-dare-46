@@ -2446,6 +2446,7 @@ MonoBehaviour:
   raycaster: {fileID: 1864124639}
   minimumChangeSize: 0.03
   startPosition: {fileID: 976845609}
+  maxPathLength: 30
 --- !u!1 &1903823662
 GameObject:
   m_ObjectHideFlags: 0
