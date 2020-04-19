@@ -8,6 +8,9 @@ public abstract class CombatCharacter : MonoBehaviour
     [SerializeField]
     protected CardDealer dealer;
 
+    [SerializeField]
+    protected CardInventory inventory;
+
     protected Health health;
 
     protected Battle battle;

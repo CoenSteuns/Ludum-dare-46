@@ -4,23 +4,46 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
+    [SerializeField]
+    private DrawPath pathMovement;
+    [SerializeField]
+    private Canvas combatCanvas;
+
     private CombatCharacter[] characters;
+
+    private int turnId = 0;
+
+    [SerializeField]
+    private CombatCharacter[] charactersDebug;
 
     private void Start()
     {
-        StartBattle();
+        StartBattle(charactersDebug);
     }
 
-    public void StartBattle()
+    public void StartBattle(CombatCharacter[] characters)
     {
+        this.characters = characters;
         for (int i = 0; i < characters.Length; i++)
         {
             characters[i].StartBattle(this);
         }
+        characters[turnId].StartTurn();
+    }
+
+    public void NextTurn()
+    {
+        characters[turnId].EndTurn();
+        if (turnId == characters.Length)
+            turnId = 0;
+        else
+            turnId++;
+        characters[turnId].StartTurn();
     }
 
     public void End()
     {
-
+        pathMovement.enabled = true;
+        combatCanvas.enabled = false;
     }
 }

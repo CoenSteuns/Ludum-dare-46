@@ -17,8 +17,10 @@ public class CombatEnemy : CombatCharacter
 
     public override void StartTurn()
     {
-        //Make logic for choosing cards
-        throw new System.NotImplementedException();
+        //LOGICS :)
+        int cardNumber = UnityEngine.Random.Range(0, inventory.Cards.Count);
+        inventory.Cards[cardNumber].Use(battle);
+        inventory.RemoveCard(cardNumber);
     }
 
     public override void EndTurn()
