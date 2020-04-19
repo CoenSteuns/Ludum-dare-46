@@ -14,7 +14,6 @@ public class CardInventory : MonoBehaviour
     public void AddCard(Card card)
     {
         card.Inventory = this;
-
         cards.Add(card);
         OnCardAdded?.Invoke();
     }

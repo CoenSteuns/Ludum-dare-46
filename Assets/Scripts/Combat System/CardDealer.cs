@@ -35,7 +35,7 @@ public class CardDealer : MonoBehaviour
     }
 
     private Card GetRandomCard(AttackColorTypes type)
-    {
+    { 
         return creator.CreateCard(type);
     }
 
