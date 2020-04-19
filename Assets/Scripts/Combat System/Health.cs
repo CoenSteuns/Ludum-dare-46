@@ -14,6 +14,8 @@ public class Health : MonoBehaviour {
     public int Max => maxHealth;
     public int Current => current;
 
+    public bool AtMax => Current == Max;
+
     public event Action<Health> OnHealthChange;
 
     public void SetMaxHealth(int maxHealth) {

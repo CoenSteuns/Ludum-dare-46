@@ -19,6 +19,6 @@ MonoBehaviour:
 
     Damages an enemy for 5 damage'
   color: 1
-  primaryValue: 0
+  primaryValue: 5
   secondaryValue: 0
   thirdValue: 0

@@ -35,7 +35,7 @@ public class Battle : MonoBehaviour
     {
         characters[turnId].EndTurn();
 
-        if (turnId == characters.Length)
+        if (turnId == characters.Length -1)
             turnId = 0;
         else
             turnId++;

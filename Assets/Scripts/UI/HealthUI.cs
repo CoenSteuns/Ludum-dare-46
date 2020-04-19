@@ -22,6 +22,7 @@ public class HealthUI : MonoBehaviour {
 
         health.OnHealthChange += UpdateHealth;
         this.health = health;
+        RefreshHealth();
     }
 
     private void UpdateHealth(Health health)
@@ -30,7 +31,7 @@ public class HealthUI : MonoBehaviour {
     }
 
     public void RefreshHealth() {
-        healthBar.fillAmount = 1 / health.Max * health.Current;
+        healthBar.fillAmount = 1f / health.Max * health.Current;
     }
 
 }

@@ -23,10 +23,12 @@ public class CombatPlayer : CombatCharacter
         inventory.ActivateCards(false);
     }
 
-    protected override void CheckHealth()
+    protected override void CheckHealth(Health health)
     {
-        if (Health.Current >= 0)
+        if (health.Current > 0)
             return;
+
+        //Go to gameover screen
         battle.End();
     }
 }

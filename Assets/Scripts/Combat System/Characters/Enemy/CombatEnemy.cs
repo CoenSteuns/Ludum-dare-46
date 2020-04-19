@@ -18,9 +18,9 @@ public class CombatEnemy : CombatCharacter
     public override void StartTurn()
     {
         //LOGICS :)
+
         int cardNumber = UnityEngine.Random.Range(0, inventory.Cards.Count);
         inventory.Cards[cardNumber].Use(battle);
-        inventory.RemoveCard(cardNumber);
     }
 
     public override void EndTurn()
@@ -28,11 +28,11 @@ public class CombatEnemy : CombatCharacter
         dealer.DealCards(1, clanType);
     }
 
-    protected override void CheckHealth()
+    protected override void CheckHealth(Health health)
     {
-        if (Health.Current >= 0)
+        if (health.Current > 0)
             return;
         battle.End();
-
+        Destroy(gameObject);
     }
 }

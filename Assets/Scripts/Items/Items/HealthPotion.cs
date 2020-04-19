@@ -29,11 +29,10 @@ public class HealthPotion : Pickup, IUsable
 
     public bool CanUse()
     {
-        return true;
+        return !health.AtMax;
     }
 
 #if UNITY_EDITOR
-
     [ContextMenu("Health References")]
     public void HandleReferendes()
     {
@@ -49,8 +48,5 @@ public class HealthPotion : Pickup, IUsable
     {
         health = GameObject.Find("Player").GetComponent<Health>();
     }
-
-    
-
 #endif
 }
