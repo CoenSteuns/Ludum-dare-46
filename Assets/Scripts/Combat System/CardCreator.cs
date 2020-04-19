@@ -63,7 +63,7 @@ public class CardCreator : MonoBehaviour
                 card = new AttackCard();
                 break;
             case CardType.Healing:
-                card = new AttackCard();
+                card = new HealingCard();
                 break;
             case CardType.Stun:
                 card = new AttackCard();

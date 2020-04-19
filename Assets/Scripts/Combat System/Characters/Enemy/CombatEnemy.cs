@@ -24,12 +24,13 @@ public class CombatEnemy : CombatCharacter
 
     public override void StartTurn()
     {
-        Card currentCard;
+        Card currentCard = null;
         if (Calculator.CalculatePercentage(health.Max, health.Current) <= lowHealthPercentage)
             currentCard = FindCard(CardType.Healing);
         else if (Calculator.CalculatePercentage(health.Max, health.Current) >= highHealthPercentage)
             currentCard = opponentStunnedRounds > 0 ? FindCard(CardType.Attack) : FindCard(CardType.Healing, false);
-        else
+        
+        if(currentCard == null)
             currentCard = inventory.Cards[0];
 
         if (currentCard.Info.TypeCard == CardType.Stun)

@@ -13,6 +13,11 @@ public abstract class Card : MonoBehaviour
 
     public CardInventory Inventory { set => inventory = value; }
 
-    public abstract void Use(Battle battle);
+    public virtual void Use(Battle battle)
+    {
+        inventory.RemoveCard(this);
+        battle.NextTurn();
+        Destroy(gameObject);
+    }
     
 }
