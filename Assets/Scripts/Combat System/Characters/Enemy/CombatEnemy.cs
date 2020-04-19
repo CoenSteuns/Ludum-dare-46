@@ -24,6 +24,12 @@ public class CombatEnemy : CombatCharacter
 
     public override void StartTurn()
     {
+        if(stunnedTime > 0)
+        {
+            stunnedTime -= 1;
+            battle.NextTurn(true);
+            return;
+        }
         Card currentCard = null;
         if (Calculator.CalculatePercentage(health.Max, health.Current) <= lowHealthPercentage)
             currentCard = FindCard(CardType.Healing);

@@ -14,15 +14,8 @@ public class Battle : MonoBehaviour
 
     private int turnId = 0;
 
-    [SerializeField]
-    private CombatCharacter[] charactersDebug;
-
-    public event Action<CombatCharacter[]> OnBattleStarted; 
-
-    private void Start()
-    {
-        //StartBattle(charactersDebug);
-    }
+    public event Action<CombatCharacter[]> OnBattleStarted;
+    public event Action OnBattleEnded;
 
     public void StartBattle(CombatCharacter[] characters)
     {
@@ -35,9 +28,10 @@ public class Battle : MonoBehaviour
         OnBattleStarted?.Invoke(characters);
     }
 
-    public void NextTurn()
+    public void NextTurn(bool noCard = false)
     {
-        characters[turnId].EndTurn();
+        if(!noCard)
+            characters[turnId].EndTurn();
 
         if (turnId == characters.Length -1)
             turnId = 0;
@@ -49,6 +43,7 @@ public class Battle : MonoBehaviour
 
     public void End()
     {
+        OnBattleEnded?.Invoke();
         pathMovement.enabled = true;
         combatCanvas.enabled = false;
     }

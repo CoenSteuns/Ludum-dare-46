@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f792c01e983a28c4ea0df7dcafa65418, type: 3}
-  m_Name: Healing Potion
+  m_Name: Bonk
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  typeCard: 1
-  cardTitle: Healing Potion
-  cardDescription: 'Sluuurp Ah thats better<br>
+  typeCard: 2
+  cardTitle: Bonk
+  cardDescription: 'Bonk says the pineapple! <br>
 
-    Heals the player for 5 health'
-  color: 2
-  primaryValue: 5
+    Stun the enemy for 2 turns'
+  color: 0
+  primaryValue: 2
   secondaryValue: 0
   thirdValue: 0

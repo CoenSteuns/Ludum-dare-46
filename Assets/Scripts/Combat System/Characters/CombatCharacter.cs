@@ -15,7 +15,11 @@ public abstract class CombatCharacter : MonoBehaviour
 
     protected Battle battle;
 
+    protected int stunnedTime = 0;
+
     public Health Health => health;
+
+    public int StunnedTime { get => stunnedTime; set => stunnedTime = value; }
 
     private void Awake()
     {

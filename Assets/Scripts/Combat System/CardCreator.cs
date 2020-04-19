@@ -66,7 +66,7 @@ public class CardCreator : MonoBehaviour
                 card = new HealingCard();
                 break;
             case CardType.Stun:
-                card = new AttackCard();
+                card = new StunCard();
                 break;
             default:
                 card = new AttackCard();

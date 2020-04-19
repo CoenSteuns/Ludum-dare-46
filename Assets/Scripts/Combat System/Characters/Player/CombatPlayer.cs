@@ -14,6 +14,14 @@ public class CombatPlayer : CombatCharacter
 
     public override void StartTurn()
     {
+
+        if (stunnedTime > 0)
+        {
+            stunnedTime -= 1;
+            battle.NextTurn(true);
+            return;
+        }
+
         inventory.ActivateCards(true);
     }
 

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackCard : Card
+public class StunCard : Card
 {
     public override void Use(Battle battle)
     {
-        CombatCharacter currentPawn = battle.GetCharacter();
         CombatCharacter enemy = battle.GetCharacter(false);
-        enemy.Health.Damage(Info.PrimaryValue);
+        enemy.StunnedTime = info.PrimaryValue;
 
         base.Use(battle);
     }
