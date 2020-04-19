@@ -15,6 +15,13 @@ public abstract class CombatCharacter : MonoBehaviour
 
     protected Battle battle;
 
+    public Health Health => health;
+
+    private void Awake()
+    {
+        health = gameObject.GetComponent<Health>();
+    }
+
     public abstract void StartBattle(Battle battle);
 
     public abstract void StartTurn();

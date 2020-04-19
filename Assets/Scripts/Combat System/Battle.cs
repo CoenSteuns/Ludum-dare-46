@@ -34,10 +34,12 @@ public class Battle : MonoBehaviour
     public void NextTurn()
     {
         characters[turnId].EndTurn();
+
         if (turnId == characters.Length)
             turnId = 0;
         else
             turnId++;
+
         characters[turnId].StartTurn();
     }
 
@@ -45,5 +47,19 @@ public class Battle : MonoBehaviour
     {
         pathMovement.enabled = true;
         combatCanvas.enabled = false;
+    }
+
+    public CombatCharacter GetCharacter(bool hasTurn = true)
+    {
+        if(hasTurn)
+            return characters[turnId];
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (i != turnId)
+                return characters[i];
+        }
+
+        return null;
     }
 }

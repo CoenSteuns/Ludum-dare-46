@@ -11,7 +11,7 @@ public class CombatEnemy : CombatCharacter
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
-        health.SetHealth(health.Max);
+        Health.SetHealth(Health.Max);
         dealer.DealCards(4, clanType);
     }
 
@@ -30,7 +30,7 @@ public class CombatEnemy : CombatCharacter
 
     protected override void CheckHealth()
     {
-        if (health.Current >= 0)
+        if (Health.Current >= 0)
             return;
         battle.End();
 
