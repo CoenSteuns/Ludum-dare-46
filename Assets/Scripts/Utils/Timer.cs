@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Timer : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class Timer : MonoBehaviour
 
     private IEnumerator RunTimer()
     {
+
+
         OnTimerStarted?.Invoke(this);
         while (timeLeft > 0)
         {
@@ -51,9 +54,7 @@ public class Timer : MonoBehaviour
 
     private void SetTimeLeft(float timeLeft)
     {
-        timeLeft = Math.Max(0, timeLeft);
+        this.timeLeft = Math.Max(0, timeLeft);
         OnTimerUpdated?.Invoke(this);
     }
-
-
 }

@@ -19,6 +19,8 @@ public class PathMover : MonoBehaviour {
     public event Action OnStartedWalking;
     public event Action OnStoppedWalking;
 
+    public float Speed { get => speed; set => speed = value; } 
+
     public void SetPath(Vector3[] path) {
         StopWalking();
         Path = path;
@@ -65,7 +67,7 @@ public class PathMover : MonoBehaviour {
             Vector3 dir = (path[currentPart + 1] - path[currentPart]).normalized;
             SetPosition(path[currentPart] + dir * restPath);
 
-            walkedPath += speed;
+            walkedPath += speed * Time.deltaTime;
             yield return null;
         }
 
