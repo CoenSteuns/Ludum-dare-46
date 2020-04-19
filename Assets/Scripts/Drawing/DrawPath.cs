@@ -24,6 +24,8 @@ public class DrawPath : MonoBehaviour {
 
     private List<Vector3> path = new List<Vector3>();
 
+    private bool isDrawing = false;
+
     public event Action<List<Vector3>> OnPathChanged;
     public event Action<List<Vector3>> OnPathFinished;
 
@@ -31,52 +33,112 @@ public class DrawPath : MonoBehaviour {
 
     public List<Vector3> Path => path;
     public bool AllowDraw { get; set; } = true;
-    public bool IsDrawing { get; private set; } = false;
+    public bool IsDrawing
+    {
+        get { return isDrawing; }
+        private set {
+            if (isDrawing == value)
+                return;
+
+            isDrawing = value;
+            OnIsDrawingChange?.Invoke(value);
+        }
+    }
+
+    public float MaxPathLenth => maxPathLength;
+    public float CurrentPathLength => currentPathLength;
+
+    public void ResetPath()
+    {
+        currentPathLength = 0;
+        path.Clear();
+        OnPathChanged?.Invoke(path);
+    }
 
     private void Update() {
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && AllowDraw && (startPosition == null || startPosition.MouseOver) && !IsDrawing)
         {
             IsDrawing = true;
-            OnIsDrawingChange?.Invoke(IsDrawing);
             ResetPath();
         }
 
         if (AllowDraw && Input.GetMouseButton(0) && raycaster.SendRay(out hit) && currentPathLength < maxPathLength) {
 
-            if (lastPoint != null && Vector3.Distance((Vector3) lastPoint, hit.point) < minimumChangeSize) //Moved enough && not first point
+            Vector3 newPathPosition = hit.point;
+            if (!IsFirstPoint() && MovedEnough(newPathPosition)) //Moved enough && not first point
                 return;
 
-            if (!IsDrawing && startPosition != null && !startPosition.MouseOver) // check for start position
+            if (!IsDrawing && ReadyForStart()) // check for start position
                 return;
 
-            if (hit.collider.CompareTag(FINISH_TAG)) {
-                IsDrawing = false;
-                OnIsDrawingChange?.Invoke(IsDrawing);
-                lastPoint = null;
-                OnPathFinished?.Invoke(path);
+            if (HitObstacle(hit.collider)) {
+                FinishPath();
                 return;
             }
 
-            path.Add(hit.point);
+            newPathPosition = ScalePath(newPathPosition);
 
-            if (lastPoint != null)
-                currentPathLength += Vector3.Distance((Vector3)lastPoint, hit.point);//TODO fix over max path length
-
-            lastPoint = hit.point;
-            OnPathChanged?.Invoke(path);
+            AddPointToPath(newPathPosition);
         } else if ((Input.GetMouseButtonUp(0) || currentPathLength >= maxPathLength) && IsDrawing) {
-            IsDrawing = false;
-            OnIsDrawingChange?.Invoke(IsDrawing);
-            lastPoint = null;
-            OnPathFinished?.Invoke(path);
+            FinishPath();
         }
     }
 
-    public void ResetPath() {
-        currentPathLength = 0;
-        path.Clear();
+    private  Vector3 ScalePath(Vector3 newPathPosition)
+    {
+        if (lastPoint != null)
+        {
+            float addedPathLength = Vector3.Distance((Vector3)lastPoint, newPathPosition);
+            if (currentPathLength + addedPathLength > maxPathLength)
+            {
+                float overMax = currentPathLength + addedPathLength - maxPathLength;
+                float allowedAdd = addedPathLength - overMax;
+                Vector3 dir = (newPathPosition - (Vector3)lastPoint).normalized;
+                newPathPosition = (Vector3)lastPoint + dir * allowedAdd;
+                currentPathLength += allowedAdd;
+                return newPathPosition;
+            }
+            else
+            {
+                currentPathLength += addedPathLength;
+            }
+        }
+        return newPathPosition;
+    }
+
+    private void AddPointToPath(Vector3 newPathPosition)
+    {
+        path.Add(newPathPosition);
+        lastPoint = newPathPosition;
         OnPathChanged?.Invoke(path);
+    }
+
+    private void FinishPath()
+    {
+        IsDrawing = false;
+        lastPoint = null;
+        OnPathFinished?.Invoke(path);
+    }
+
+    private bool MovedEnough(Vector3 newPos)
+    {
+        return  Vector3.Distance((Vector3)lastPoint, newPos) < minimumChangeSize;
+    } 
+
+    private bool IsFirstPoint()
+    {
+        return lastPoint == null;
+    }
+
+    private bool ReadyForStart()
+    {
+        return startPosition != null && !startPosition.MouseOver;
+    }
+
+    private bool HitObstacle(Collider hit)
+    {
+        return hit.CompareTag(FINISH_TAG);
     }
 
 }
