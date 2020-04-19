@@ -28,7 +28,8 @@ public class FieldOfView : MonoBehaviour {
 
 	//Edit in the editor. The delay between entering the vision cone and getting spotted.
     [SerializeField]private float SpottedDelay;
-
+	[SerializeField]private GameObject CombatUI;
+	[SerializeField]private MonoBehaviour PlayerMovement;
 
 	void Start() {
 		viewMesh = new Mesh ();
@@ -64,10 +65,12 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, targetTransform.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (targetTransform);
+					
+					PlayerMovement.SetActive(false);
+					CombatUI.SetActive(true);
 
-					//turning target red when spotted for testing
-					var targetRenderer = targetObject.GetComponent<Renderer>();
-					targetRenderer.material.SetColor("_Color", Color.red);
+					/*var targetRenderer = targetObject.GetComponent<Renderer>();
+					targetRenderer.material.SetColor("_Color", Color.red);*/
 				}
 			}
 		}
