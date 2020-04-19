@@ -10,7 +10,7 @@ Material:
   m_Name: ViewVisualization
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON
-  m_LightmapFlags: 4
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0.5686275}
+    - _Color: {r: 0.8773585, g: 0.8104233, b: 0.49247953, a: 0.68235296}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

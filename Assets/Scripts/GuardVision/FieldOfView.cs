@@ -31,9 +31,12 @@ public class FieldOfView : MonoBehaviour {
 
 	//Assign them in the editor, used to turn on/off the things to go into combat.
 	[SerializeField]private GameObject CombatUI;
-	[SerializeField]private MonoBehaviour PlayerMovement;
+	[SerializeField]private GameObject mainCamera;
+	private MonoBehaviour drawPath;
 
 	void Start() {
+		drawPath = mainCamera.GetComponent<DrawPath>();
+
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
@@ -68,7 +71,7 @@ public class FieldOfView : MonoBehaviour {
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (targetTransform);
 
-					PlayerMovement.SetActive(false);
+					drawPath.enabled = false;
 					CombatUI.SetActive(true);
 
 					/*var targetRenderer = targetObject.GetComponent<Renderer>();
