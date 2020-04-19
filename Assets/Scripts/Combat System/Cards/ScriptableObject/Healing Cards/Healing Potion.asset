@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Healing Potion
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  typeCard: 0
-  cardTitle: 
-  cardDescription: 
-  color: 0
-  primaryValue: 0
+  typeCard: 1
+  cardTitle: Healing Potion
+  cardDescription: '*Sluuurp* Ah thats better<br>
+
+    Heals the player for 5 health'
+  color: 2
+  primaryValue: 5
   secondaryValue: 0
   thirdValue: 0

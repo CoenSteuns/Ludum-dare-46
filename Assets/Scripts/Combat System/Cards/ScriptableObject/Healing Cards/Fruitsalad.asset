@@ -18,7 +18,7 @@ MonoBehaviour:
   cardDescription: 'Nom nom nom, what a nice salad! <br>
 
     Heals the player for
-    5 damage'
+    5 health'
   color: 0
   primaryValue: 5
   secondaryValue: 0

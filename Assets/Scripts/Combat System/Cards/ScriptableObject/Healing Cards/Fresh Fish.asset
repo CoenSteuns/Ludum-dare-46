@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Fresh Fish
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  typeCard: 0
-  cardTitle: 
-  cardDescription: 
-  color: 0
-  primaryValue: 0
+  typeCard: 1
+  cardTitle: Fresh Fish
+  cardDescription: '<br>
+
+    Heals the player for 5 health'
+  color: 1
+  primaryValue: 5
   secondaryValue: 0
   thirdValue: 0
