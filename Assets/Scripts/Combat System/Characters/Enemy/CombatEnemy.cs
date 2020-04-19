@@ -8,6 +8,13 @@ public class CombatEnemy : CombatCharacter
     [SerializeField]
     private AttackColorTypes clanType;
 
+    [SerializeField]
+    private static int lowHealthPercentage = 30;
+    [SerializeField]
+    private static int highHealthPercentage = 70;
+
+    private int opponentStunnedRounds = 0;
+
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
@@ -17,10 +24,18 @@ public class CombatEnemy : CombatCharacter
 
     public override void StartTurn()
     {
-        //LOGICS :)
+        Card currentCard;
+        if (Calculator.CalculatePercentage(health.Max, health.Current) <= lowHealthPercentage)
+            currentCard = FindCard(CardType.Healing);
+        else if (Calculator.CalculatePercentage(health.Max, health.Current) >= highHealthPercentage)
+            currentCard = opponentStunnedRounds > 0 ? FindCard(CardType.Attack) : FindCard(CardType.Healing, false);
+        else
+            currentCard = inventory.Cards[0];
 
-        int cardNumber = UnityEngine.Random.Range(0, inventory.Cards.Count);
-        inventory.Cards[cardNumber].Use(battle);
+        if (currentCard.Info.TypeCard == CardType.Stun)
+            opponentStunnedRounds = currentCard.Info.PrimaryValue;
+
+        currentCard.Use(battle);
     }
 
     public override void EndTurn()
@@ -34,5 +49,15 @@ public class CombatEnemy : CombatCharacter
             return;
         battle.End();
         Destroy(gameObject);
+    }
+
+    private Card FindCard(CardType type, bool include = true)
+    {
+        for (int i = 0; i < inventory.Cards.Count; i++)
+        {
+            if ((inventory.Cards[i].Info.TypeCard == type) == include)
+                return inventory.Cards[i];
+        }
+        return null;
     }
 }
