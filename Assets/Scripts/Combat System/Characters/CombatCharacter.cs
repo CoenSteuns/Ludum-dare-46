@@ -20,6 +20,7 @@ public abstract class CombatCharacter : MonoBehaviour
     private void Awake()
     {
         health = gameObject.GetComponent<Health>();
+        health.OnHealthChange += CheckHealth;
     }
 
     public abstract void StartBattle(Battle battle);
@@ -28,5 +29,5 @@ public abstract class CombatCharacter : MonoBehaviour
 
     public abstract void EndTurn();
 
-    protected abstract void CheckHealth();
+    protected abstract void CheckHealth(Health health);
 }
