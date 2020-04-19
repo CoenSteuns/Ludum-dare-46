@@ -34,7 +34,7 @@ public class FieldOfView : MonoBehaviour {
 	[SerializeField]private GameObject mainCamera;
 	private MonoBehaviour drawPath;
 
-	private CombatCharacter[] characters;
+	private CombatCharacter[] characters = new CombatCharacter[2];
 
 	void Start() {
 		drawPath = mainCamera.GetComponent<DrawPath>();
@@ -77,12 +77,13 @@ public class FieldOfView : MonoBehaviour {
 					var battleStart = CombatUI.GetComponent<Battle>();
 					characters[0] = battlePlayer;
 					characters[1] = battleGuard;
-					battleStart.StartBattle(characters);
+                    CombatUI.SetActive(true);
+                    battleStart.StartBattle(characters);
 					drawPath.enabled = false;
-					CombatUI.SetActive(true);
+					
 
-					/*var targetRenderer = targetObject.GetComponent<Renderer>();
-					targetRenderer.material.SetColor("_Color", Color.red);*/
+                    StopAllCoroutines();
+                    enabled = false;
 				}
 			}
 		}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,9 +17,11 @@ public class Battle : MonoBehaviour
     [SerializeField]
     private CombatCharacter[] charactersDebug;
 
+    public event Action<CombatCharacter[]> OnBattleStarted; 
+
     private void Start()
     {
-        StartBattle(charactersDebug);
+        //StartBattle(charactersDebug);
     }
 
     public void StartBattle(CombatCharacter[] characters)
@@ -29,6 +32,7 @@ public class Battle : MonoBehaviour
             characters[i].StartBattle(this);
         }
         characters[turnId].StartTurn();
+        OnBattleStarted?.Invoke(characters);
     }
 
     public void NextTurn()
