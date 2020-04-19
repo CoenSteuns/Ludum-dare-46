@@ -57,13 +57,14 @@ public class DrawPath : MonoBehaviour {
 
     private void Update() {
         RaycastHit hit;
+        bool rayHit = raycaster.SendRay(out hit);
         if (Input.GetMouseButtonDown(0) && AllowDraw && (startPosition == null || startPosition.MouseOver) && !IsDrawing)
         {
             IsDrawing = true;
             ResetPath();
         }
 
-        if (AllowDraw && Input.GetMouseButton(0) && raycaster.SendRay(out hit) && currentPathLength < maxPathLength) {
+        if (AllowDraw && Input.GetMouseButton(0) && rayHit && currentPathLength < maxPathLength) {
 
             Vector3 newPathPosition = hit.point;
             if (!IsFirstPoint() && MovedEnough(newPathPosition)) //Moved enough && not first point
@@ -80,7 +81,7 @@ public class DrawPath : MonoBehaviour {
             newPathPosition = ScalePath(newPathPosition);
 
             AddPointToPath(newPathPosition);
-        } else if ((Input.GetMouseButtonUp(0) || currentPathLength >= maxPathLength) && IsDrawing) {
+        } else if ((Input.GetMouseButtonUp(0) || currentPathLength >= maxPathLength) && IsDrawing || IsDrawing && !rayHit) {
             FinishPath();
         }
     }
