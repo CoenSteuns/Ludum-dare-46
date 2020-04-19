@@ -46,6 +46,9 @@ public class PathMover : MonoBehaviour {
     }
 
     public IEnumerator WalkPathRoutine(Vector3[] path) {
+
+        path[0] = transform.position;
+
         float walkedPath = 0;
         int currentPart = 0;
 

@@ -29,8 +29,16 @@ public class FieldOfView : MonoBehaviour {
 	//Edit in the editor. The delay between entering the vision cone and getting spotted.
     [SerializeField]private float SpottedDelay;
 
+	//Assign them in the editor, used to turn on/off the things to go into combat.
+	[SerializeField]private GameObject CombatUI;
+	[SerializeField]private GameObject mainCamera;
+	private MonoBehaviour drawPath;
+
+	private CombatCharacter[] characters = new CombatCharacter[2];
 
 	void Start() {
+		drawPath = mainCamera.GetComponent<DrawPath>();
+
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
@@ -64,10 +72,18 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, targetTransform.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (targetTransform);
+					var battlePlayer = targetObject.GetComponent<CombatPlayer>();
+					var battleGuard = GetComponent<CombatEnemy>();
+					var battleStart = CombatUI.GetComponent<Battle>();
+					characters[0] = battlePlayer;
+					characters[1] = battleGuard;
+                    CombatUI.SetActive(true);
+                    battleStart.StartBattle(characters);
+					drawPath.enabled = false;
+					
 
-					//turning target red when spotted for testing
-					var targetRenderer = targetObject.GetComponent<Renderer>();
-					targetRenderer.material.SetColor("_Color", Color.red);
+                    StopAllCoroutines();
+                    enabled = false;
 				}
 			}
 		}
