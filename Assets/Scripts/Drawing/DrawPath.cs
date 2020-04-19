@@ -16,6 +16,10 @@ public class DrawPath : MonoBehaviour {
     [SerializeField]
     private MouseOverCheck startPosition;
 
+    [SerializeField]
+    private float maxPathLength = 5;
+    private float currentPathLength = 0;
+
     private Vector3? lastPoint = null;
 
     private List<Vector3> path = new List<Vector3>();
@@ -35,10 +39,10 @@ public class DrawPath : MonoBehaviour {
         {
             IsDrawing = true;
             OnIsDrawingChange?.Invoke(IsDrawing);
-            path.Clear();
+            ResetPath();
         }
 
-        if (AllowDraw && Input.GetMouseButton(0) && raycaster.SendRay(out hit)) {
+        if (AllowDraw && Input.GetMouseButton(0) && raycaster.SendRay(out hit) && currentPathLength < maxPathLength) {
 
             if (lastPoint != null && Vector3.Distance((Vector3) lastPoint, hit.point) < minimumChangeSize) //Moved enough && not first point
                 return;
@@ -55,9 +59,13 @@ public class DrawPath : MonoBehaviour {
             }
 
             path.Add(hit.point);
+
+            if (lastPoint != null)
+                currentPathLength += Vector3.Distance((Vector3)lastPoint, hit.point);//TODO fix over max path length
+
             lastPoint = hit.point;
             OnPathChanged?.Invoke(path);
-        } else if (Input.GetMouseButtonUp(0) && IsDrawing) {
+        } else if ((Input.GetMouseButtonUp(0) || currentPathLength >= maxPathLength) && IsDrawing) {
             IsDrawing = false;
             OnIsDrawingChange?.Invoke(IsDrawing);
             lastPoint = null;
@@ -66,6 +74,7 @@ public class DrawPath : MonoBehaviour {
     }
 
     public void ResetPath() {
+        currentPathLength = 0;
         path.Clear();
         OnPathChanged?.Invoke(path);
     }
