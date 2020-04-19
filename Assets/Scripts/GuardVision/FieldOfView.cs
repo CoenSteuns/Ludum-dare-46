@@ -28,6 +28,8 @@ public class FieldOfView : MonoBehaviour {
 
 	//Edit in the editor. The delay between entering the vision cone and getting spotted.
     [SerializeField]private float SpottedDelay;
+
+	//Assign them in the editor, used to turn on/off the things to go into combat.
 	[SerializeField]private GameObject CombatUI;
 	[SerializeField]private MonoBehaviour PlayerMovement;
 
@@ -65,7 +67,7 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, targetTransform.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (targetTransform);
-					
+
 					PlayerMovement.SetActive(false);
 					CombatUI.SetActive(true);
 
