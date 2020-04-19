@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class CardDealer : MonoBehaviour
     private CardInventory inventory;
 
     [SerializeField]
-    private List<Card> availableCards;
+    private CardCreator creator;
 
     public void DealCards(int amount)
     {
@@ -35,8 +36,7 @@ public class CardDealer : MonoBehaviour
 
     private Card GetRandomCard(AttackColorTypes type)
     {
-        int cardId = UnityEngine.Random.Range(0, availableCards.Count);
-        return availableCards[cardId];
+        return creator.CreateCard(type);
     }
 
     private AttackColorTypes GetRandomType()
@@ -48,6 +48,6 @@ public class CardDealer : MonoBehaviour
 
     public void ClearHand()
     {
-        inventory.ClearInventory();
+        inventory?.ClearInventory();
     }
 }

@@ -25,7 +25,7 @@ public class CombatPlayer : CombatCharacter
 
     protected override void CheckHealth()
     {
-        if (health.Current >= 0)
+        if (Health.Current >= 0)
             return;
         battle.End();
     }

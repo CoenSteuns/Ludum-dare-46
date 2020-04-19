@@ -5,10 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 public abstract class Card : MonoBehaviour
 {
-    [SerializeField]
-    private CardInfo info;
+    protected CardInfo info;
+    protected CardInventory inventory;
 
-    public CardInfo Info => info;
+    
+    public CardInfo Info { get => info; set => info = value; }
+
+    public CardInventory Inventory { set => inventory = value; }
 
     public abstract void Use(Battle battle);
+    
 }
