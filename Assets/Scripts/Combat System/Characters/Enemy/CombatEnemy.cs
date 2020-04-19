@@ -18,6 +18,7 @@ public class CombatEnemy : CombatCharacter
     public override void StartTurn()
     {
         //LOGICS :)
+        print(inventory.Cards.Count);
         int cardNumber = UnityEngine.Random.Range(0, inventory.Cards.Count);
         inventory.Cards[cardNumber].Use(battle);
         inventory.RemoveCard(cardNumber);

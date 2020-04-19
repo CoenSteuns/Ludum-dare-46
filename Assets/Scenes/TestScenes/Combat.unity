@@ -884,6 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d878c620e7d7c43a7469f1f5659536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battle: {fileID: 2467246505652253074}
   cardHolder: {fileID: 2467246505652253086}
   cardPrefab: {fileID: 4229178702528359971, guid: 3ff45099eb5cd674bb8212559aef3106,
     type: 3}
@@ -906,6 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d878c620e7d7c43a7469f1f5659536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battle: {fileID: 2467246505652253074}
   cardHolder: {fileID: 2467246505652253087}
   cardPrefab: {fileID: 9157543519954174495, guid: 03158654fa579f74cbc4397371655a3e,
     type: 3}

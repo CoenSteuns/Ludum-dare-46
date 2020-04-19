@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f792c01e983a28c4ea0df7dcafa65418, type: 3}
   m_Name: Swootery Attack
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 880295570925155449d245a351c79410, type: 3}
+  cardImage: {fileID: 0}
   typeCard: 0
   cardTitle: Swootery
   cardDescription: 'Swittery Swootery <br>

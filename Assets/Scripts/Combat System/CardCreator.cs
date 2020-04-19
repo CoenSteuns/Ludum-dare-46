@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class CardCreator : MonoBehaviour
 {
+    [SerializeField]
+    private Battle battle;
     [SerializeField]
     private Transform cardHolder;
     [SerializeField]
@@ -27,6 +30,9 @@ public class CardCreator : MonoBehaviour
         {
             CardUI ui = cardObject.GetComponent<CardUI>();
             ui.ChangeUI(currentCard);
+
+            Button cardSelect = cardObject.GetComponent<Button>();
+            cardSelect.onClick.AddListener(() => { currentCard.Use(battle); });
         }
 
         return currentCard;

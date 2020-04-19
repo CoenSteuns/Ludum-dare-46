@@ -12,5 +12,6 @@ public class AttackCard : Card
 
         inventory.RemoveCard(this);
         battle.NextTurn();
+        Destroy(gameObject);
     }
 }
