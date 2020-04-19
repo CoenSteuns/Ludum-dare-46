@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
   typeCard: 0
-  cardTitle: Scatch
+  cardTitle: Scratch
   cardDescription: 'Scratcheroooo! <br>
 
     Damages an enemy for 5 damage'

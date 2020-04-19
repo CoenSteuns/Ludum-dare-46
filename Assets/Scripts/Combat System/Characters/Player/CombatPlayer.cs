@@ -5,6 +5,9 @@ using UnityEngine;
 public class CombatPlayer : CombatCharacter
 {
 
+    [SerializeField]
+    private GameObject level, gameOverScreen;
+
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
@@ -37,6 +40,8 @@ public class CombatPlayer : CombatCharacter
             return;
 
         //Go to gameover screen
+        gameOverScreen.SetActive(true);
+        level.SetActive(false);
         battle.End();
     }
 }
