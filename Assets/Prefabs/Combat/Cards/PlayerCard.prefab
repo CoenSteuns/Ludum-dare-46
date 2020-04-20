@@ -17,8 +17,8 @@ MonoBehaviour:
   cardDescription: {fileID: 5415830858907828611}
   emblems:
   - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
+  - {fileID: 21300000, guid: 04e0371bdfe0bd747bdddaec3e1f06fa, type: 3}
+  - {fileID: 21300000, guid: 57df50ba35a3fb04bb33b51687f58d44, type: 3}
 --- !u!114 &7110186818369668064
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1179,8 +1179,8 @@ MonoBehaviour:
   titleDescription: {fileID: 6216710340087359111}
   clanEmblems:
   - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
+  - {fileID: 21300000, guid: 04e0371bdfe0bd747bdddaec3e1f06fa, type: 3}
+  - {fileID: 21300000, guid: 57df50ba35a3fb04bb33b51687f58d44, type: 3}
 --- !u!114 &9206097988756022500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,8 +1552,8 @@ MonoBehaviour:
   titleDescription: {fileID: 5405725437771318343}
   clanEmblems:
   - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
-  - {fileID: 21300000, guid: c92caff8994cae24799abca72a90f045, type: 3}
+  - {fileID: 21300000, guid: 04e0371bdfe0bd747bdddaec3e1f06fa, type: 3}
+  - {fileID: 21300000, guid: 57df50ba35a3fb04bb33b51687f58d44, type: 3}
 --- !u!114 &7097794924057003556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,12 +1668,12 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 148.75
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -1693,7 +1693,7 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -1703,7 +1703,7 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -1719,6 +1719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229178702528359971, guid: 3ff45099eb5cd674bb8212559aef3106,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6256726385805053689, guid: 3ff45099eb5cd674bb8212559aef3106, type: 3}
@@ -2262,12 +2267,12 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 451.25
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -2287,7 +2292,7 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -2297,7 +2302,7 @@ PrefabInstance:
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4229178702528359970, guid: 3ff45099eb5cd674bb8212559aef3106,
         type: 3}
@@ -2313,6 +2318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229178702528359971, guid: 3ff45099eb5cd674bb8212559aef3106,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6256726385805053689, guid: 3ff45099eb5cd674bb8212559aef3106, type: 3}

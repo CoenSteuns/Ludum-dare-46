@@ -24,6 +24,7 @@ public class UsedCardInfoUI : MonoBehaviour
 
     public void UpdateUI(AttackColorTypes clan, string description)
     {
+        gameObject.SetActive(true);
         titleText.text = isEnemy ? GetName(clan) : "Wiilmp";
         logo.sprite = clanEmblems[(int)clan];
         titleDescription.text = description;
