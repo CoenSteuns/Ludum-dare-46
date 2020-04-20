@@ -20,8 +20,11 @@ public class Battle : MonoBehaviour
     public event Action<CombatCharacter[]> OnBattleStarted;
     public event Action OnBattleEnded;
 
+    private bool battleEnded = false;
+
     public void StartBattle(CombatCharacter[] characters)
     {
+        battleEnded = false;
         this.characters = characters;
         for (int i = 0; i < characters.Length; i++)
         {
@@ -33,7 +36,9 @@ public class Battle : MonoBehaviour
 
     public void NextTurn(bool noCard = false)
     {
-        if(!noCard)
+        if (battleEnded)
+            return;
+        if (!noCard)
             characters[turnId].EndTurn();
 
         if (turnId == characters.Length -1)
@@ -46,6 +51,12 @@ public class Battle : MonoBehaviour
 
     public void End()
     {
+        battleEnded = true;
+        for (int i = 0; i < characters.Length; i++)
+        {
+            characters[i].ClearInventory();
+        }
+
         OnBattleEnded?.Invoke();
         pathMovement.enabled = true;
         combatCanvas.enabled = false;

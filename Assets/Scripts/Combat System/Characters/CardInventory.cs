@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardInventory : MonoBehaviour
 {
     private List<Card> cards = new List<Card>();
     public Action OnCardAdded;
 
+    [SerializeField]
+    private GameObject cardHolder;
 
     public List<Card> Cards => cards;
 
@@ -20,7 +23,10 @@ public class CardInventory : MonoBehaviour
 
     public void RemoveCard(Card card)
     {
+        if (!card)
+            return;
         cards.Remove(card);
+        Destroy(card.gameObject);
     }
 
     public void RemoveCard(int cardId)
@@ -28,9 +34,13 @@ public class CardInventory : MonoBehaviour
         cards.RemoveAt(cardId);
     }
 
-    public void ClearInventory()
+    public void ClearInventory()    
     {
         cards.Clear();
+        for (int i = cardHolder.transform.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(cardHolder.transform.GetChild(i).gameObject);
+        }
     }
 
     public void ActivateCards(bool active)
@@ -38,6 +48,7 @@ public class CardInventory : MonoBehaviour
         foreach (var card in Cards)
         {
             card.enabled = active;
+            card.GetComponent<Button>().enabled = active;
         }
     }
 }

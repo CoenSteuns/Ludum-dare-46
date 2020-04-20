@@ -31,7 +31,7 @@ public class FieldOfView : MonoBehaviour {
     [SerializeField]private float SpottedDelay;
 
 	//Assign them in the editor, used to turn on/off the things to go into combat.
-	[SerializeField]private GameObject CombatUI;
+	[SerializeField]private Canvas CombatUI;
 	[SerializeField]private GameObject mainCamera;
 	private MonoBehaviour drawPath;
 
@@ -80,10 +80,10 @@ public class FieldOfView : MonoBehaviour {
 					var battleStart = CombatUI.GetComponent<Battle>();
 					characters[0] = battlePlayer;
 					characters[1] = battleGuard;
-                    CombatUI.SetActive(true);
+                    CombatUI.enabled = true;
                     battleStart.StartBattle(characters);
 					drawPath.enabled = false;
-
+                    print("spotted");
                     OnSpottted?.Invoke();
                     StopAllCoroutines();
                     enabled = false;

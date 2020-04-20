@@ -14,7 +14,9 @@ public class HealthPotion : Pickup, IUsable
 
     private void Reset()
     {
+#if UNITY_EDITOR
         PlayerReference();
+#endif
     }
 
     public void Use()

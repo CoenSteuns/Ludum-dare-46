@@ -8,14 +8,15 @@ public class CombatMusicActivator : MonoBehaviour
     [SerializeField]
     private AudioManager audioManager;
 
-    private void OnEnable()
+    [SerializeField]
+    private Battle battle;
+
+    private void Awake()
     {
-        audioManager.SetCombat(true);
+
+        battle.OnBattleStarted += (c) => audioManager.SetCombat(true);
+        battle.OnBattleEnded += () => audioManager.SetCombat(false);
     }
 
-    private void OnDisable()
-    {
-        audioManager.SetCombat(false);
-    }
 
 }
