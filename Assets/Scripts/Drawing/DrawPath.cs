@@ -151,4 +151,11 @@ public class DrawPath : MonoBehaviour {
         return hit.CompareTag(FINISH_TAG);
     }
 
+    private void OnDisable()
+    {
+        ResetPath();
+        pathFinished = false;
+        IsDrawing = false;
+    }
+
 }
