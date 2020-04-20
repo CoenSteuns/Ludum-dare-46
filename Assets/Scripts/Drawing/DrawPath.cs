@@ -20,6 +20,8 @@ public class DrawPath : MonoBehaviour {
     private float maxPathLength = 5;
     private float currentPathLength = 0;
 
+    private bool pathFinished = false;
+
     private Vector3? lastPoint = null;
 
     private List<Vector3> path = new List<Vector3>();
@@ -56,6 +58,11 @@ public class DrawPath : MonoBehaviour {
     }
 
     private void Update() {
+
+        if (pathFinished && Input.GetMouseButton(0))
+            return;
+
+        pathFinished = false;
         RaycastHit hit;
         bool rayHit = raycaster.SendRay(out hit);
         if (Input.GetMouseButtonDown(0) && AllowDraw && (startPosition == null || startPosition.MouseOver) && !IsDrawing)
@@ -110,6 +117,7 @@ public class DrawPath : MonoBehaviour {
 
     private void AddPointToPath(Vector3 newPathPosition)
     {
+        
         path.Add(newPathPosition);
         lastPoint = newPathPosition;
         OnPathChanged?.Invoke(path);
@@ -117,6 +125,7 @@ public class DrawPath : MonoBehaviour {
 
     private void FinishPath()
     {
+        pathFinished = true;
         IsDrawing = false;
         lastPoint = null;
         OnPathFinished?.Invoke(path);
