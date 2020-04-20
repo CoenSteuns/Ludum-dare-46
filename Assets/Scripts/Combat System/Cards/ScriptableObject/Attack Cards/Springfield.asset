@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Springfield
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 8300000, guid: fb38902c4a21554409ff8d584a7a83c8, type: 3}
   typeCard: 0
   cardTitle: Springfield
   cardDescription: 'BRRRRR <br>

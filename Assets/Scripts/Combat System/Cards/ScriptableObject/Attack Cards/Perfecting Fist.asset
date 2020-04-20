@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Perfecting Fist
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 8300000, guid: c2219498ee0b42c4db8c4b251970b3aa, type: 3}
   typeCard: 0
   cardTitle: Perfecting Fist
   cardDescription: 'KWAPOW! <br>

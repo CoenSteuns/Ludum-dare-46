@@ -8,6 +8,8 @@ public class CardInfo: ScriptableObject
     [SerializeField, Header("Info")]
     private Sprite cardImage;
     [SerializeField]
+    private AudioClip sfx;
+    [SerializeField]
     private CardType typeCard;
     [SerializeField]
     private string cardTitle;
@@ -30,4 +32,5 @@ public class CardInfo: ScriptableObject
     public int PrimaryValue => primaryValue;
     public int SecondaryValue => secondaryValue;
     public int ThirdValue => thirdValue;
+    public AudioClip SFX => sfx;
 }

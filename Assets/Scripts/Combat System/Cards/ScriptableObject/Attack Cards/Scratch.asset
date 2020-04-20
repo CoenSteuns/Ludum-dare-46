@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Scratch
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 8300000, guid: 0f0acb3e72b6ccc4a90a13b2b1130523, type: 3}
   typeCard: 0
   cardTitle: Scratch
   cardDescription: 'Scratcheroooo! <br>
