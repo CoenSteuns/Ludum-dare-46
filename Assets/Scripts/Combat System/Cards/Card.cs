@@ -7,7 +7,7 @@ public abstract class Card : MonoBehaviour
 {
     protected CardInfo info;
     protected CardInventory inventory;
-
+    protected Battle battle;
     
     public CardInfo Info { get => info; set => info = value; }
 
@@ -15,7 +15,8 @@ public abstract class Card : MonoBehaviour
 
     public virtual void Use(Battle battle)
     {
-
+        this.battle = battle;
+        UpdateUsedCard();
         PlaySfx(battle);
         inventory.RemoveCard(this);
         battle.NextTurn();
@@ -56,5 +57,7 @@ public abstract class Card : MonoBehaviour
 
         battle.PlaySound(info.SFX);
     }
+
+    protected abstract void UpdateUsedCard();
     
 }

@@ -8,7 +8,11 @@ public class StunCard : Card
     {
         CombatCharacter enemy = battle.GetCharacter(false);
         enemy.StunnedTime = info.PrimaryValue;
-
         base.Use(battle);
+    }
+
+    protected override void UpdateUsedCard()
+    {
+        battle.UpdateUsedCard(info.Color, "Stunned the opponent for " + info.PrimaryValue + " turns");
     }
 }

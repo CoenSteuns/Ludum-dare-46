@@ -8,7 +8,11 @@ public class HealingCard : Card
     {
         CombatCharacter currentPawn = battle.GetCharacter();
         currentPawn.Health.Heal(info.PrimaryValue);
-
         base.Use(battle);
+    }
+
+    protected override void UpdateUsedCard()
+    {
+        battle.UpdateUsedCard(info.Color, "Healed the character for " + info.PrimaryValue + " health");
     }
 }

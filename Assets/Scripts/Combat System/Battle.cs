@@ -12,9 +12,11 @@ public class Battle : MonoBehaviour
     [SerializeField]
     private AudioSource source;
 
-
     [SerializeField]
     private BattleUI battleUI;
+
+    [SerializeField]
+    private UsedCardInfoUI[] usedCardInfoUIs;
 
     private CombatCharacter[] characters;
 
@@ -30,6 +32,7 @@ public class Battle : MonoBehaviour
         battleEnded = false;
         this.characters = characters;
         battleUI.UpdateUI(characters[1] as CombatEnemy); //TODO This will break if we change FieldOfView
+
         for (int i = 0; i < characters.Length; i++)
         {
             characters[i].StartBattle(this);
@@ -84,5 +87,10 @@ public class Battle : MonoBehaviour
     {
         source.clip = clip;
         source.Play();
+    }
+
+    public void UpdateUsedCard(AttackColorTypes clan, string description)
+    {
+        usedCardInfoUIs[turnId].UpdateUI(clan, description);
     }
 }

@@ -13,10 +13,12 @@ public class CardUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI cardDescription;
 
+    [SerializeField]
+    private Sprite[] emblems;
     public void ChangeUI(Card card)
     {
         if (!card) return;
-        //cardImage.sprite = card.Info?.CardImage;
+        cardImage.sprite = emblems[(int)card.Info.Color];
         cardTitle.text = card.Info?.CardTitle;
         cardDescription.text = card.Info?.CardDescription;
     }
