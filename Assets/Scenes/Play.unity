@@ -6850,6 +6850,12 @@ PrefabInstance:
       propertyPath: cardHolder
       value: 
       objectReference: {fileID: 1414243172}
+    - target: {fileID: 3931944681966677320, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: cardPrefab
+      value: 
+      objectReference: {fileID: 4665516199341068576, guid: 249ce97b077ad0146ae81d8ad82941d9,
+        type: 3}
     - target: {fileID: 4694084401784455218, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: health
