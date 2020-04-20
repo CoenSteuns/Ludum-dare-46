@@ -21,6 +21,7 @@ public class CardInventory : MonoBehaviour
     public void RemoveCard(Card card)
     {
         cards.Remove(card);
+        Destroy(card.gameObject);
     }
 
     public void RemoveCard(int cardId)
@@ -30,7 +31,10 @@ public class CardInventory : MonoBehaviour
 
     public void ClearInventory()
     {
-        cards.Clear();
+        for (int i = 0; i < cards.Count; i++)
+        {
+            RemoveCard(cards[0]);
+        }
     }
 
     public void ActivateCards(bool active)

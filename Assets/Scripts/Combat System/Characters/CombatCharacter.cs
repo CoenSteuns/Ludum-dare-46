@@ -33,5 +33,7 @@ public abstract class CombatCharacter : MonoBehaviour
 
     public abstract void EndTurn();
 
+    public abstract void ClearInventory();
+
     protected abstract void CheckHealth(Health health);
 }

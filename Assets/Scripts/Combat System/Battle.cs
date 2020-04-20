@@ -43,6 +43,11 @@ public class Battle : MonoBehaviour
 
     public void End()
     {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            characters[i].ClearInventory();
+        }
+
         OnBattleEnded?.Invoke();
         pathMovement.enabled = true;
         combatCanvas.enabled = false;

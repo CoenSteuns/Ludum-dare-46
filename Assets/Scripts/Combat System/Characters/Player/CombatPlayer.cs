@@ -44,4 +44,9 @@ public class CombatPlayer : CombatCharacter
         level.SetActive(false);
         battle.End();
     }
+
+    public override void ClearInventory()
+    {
+        inventory.ClearInventory();
+    }
 }

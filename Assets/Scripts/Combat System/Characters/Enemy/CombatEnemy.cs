@@ -67,4 +67,9 @@ public class CombatEnemy : CombatCharacter
         }
         return null;
     }
+
+    public override void ClearInventory()
+    {
+        inventory.ClearInventory();
+    }
 }

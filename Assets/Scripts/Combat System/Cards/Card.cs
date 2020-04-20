@@ -17,7 +17,6 @@ public abstract class Card : MonoBehaviour
     {
         inventory.RemoveCard(this);
         battle.NextTurn();
-        Destroy(gameObject);
     }
     
 }

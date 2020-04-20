@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1296666786986059202}
   - component: {fileID: 7828849540283686900}
   - component: {fileID: 4582729584140428045}
-  - component: {fileID: 31656793421567971}
-  m_Layer: 8
+  - component: {fileID: 2304818212314845855}
+  m_Layer: 11
   m_Name: Oil_Barrel
-  m_TagString: DrawObstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &31656793421567971
-CapsuleCollider:
+--- !u!64 &2304818212314845855
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,10 +91,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.85
-  m_Height: 2.9511416
-  m_Direction: 1
-  m_Center: {x: -0.00000047683716, y: 0.00031137466, z: 0.00001168251}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1735903865976555074, guid: 158907124314e0d4996053225cae24ea, type: 3}
 --- !u!1 &6689673338350391196
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,10 +104,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6131318313076390509}
-  - component: {fileID: 9200509371200771836}
-  m_Layer: 11
+  - component: {fileID: 6109324672955379918}
+  m_Layer: 8
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: DrawObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ Transform:
   m_Father: {fileID: 1296666786986059202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &9200509371200771836
+--- !u!136 &6109324672955379918
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.15
+  m_Radius: 1.85
   m_Height: 2.9511416
   m_Direction: 1
   m_Center: {x: -0.00000047683716, y: 0.00031137466, z: 0.00001168251}
