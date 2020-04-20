@@ -48,7 +48,7 @@ public class CardInventory : MonoBehaviour
         foreach (var card in Cards)
         {
             card.enabled = active;
-            card.GetComponent<Button>().enabled = active;
+            card.GetComponent<Button>().interactable = active;
         }
     }
 }

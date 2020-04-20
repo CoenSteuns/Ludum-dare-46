@@ -10,6 +10,9 @@ public class Battle : MonoBehaviour
     [SerializeField]
     private Canvas combatCanvas;
 
+    [SerializeField]
+    private BattleUI battleUI;
+
     private CombatCharacter[] characters;
 
     private int turnId = 0;
@@ -23,6 +26,7 @@ public class Battle : MonoBehaviour
     {
         battleEnded = false;
         this.characters = characters;
+        battleUI.UpdateUI(characters[1] as CombatEnemy); //TODO This will break if we change FieldOfView
         for (int i = 0; i < characters.Length; i++)
         {
             characters[i].StartBattle(this);
