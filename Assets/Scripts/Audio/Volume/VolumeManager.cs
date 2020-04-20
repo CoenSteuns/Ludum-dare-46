@@ -22,8 +22,17 @@ public class VolumeManager
     private float masterVolume = START_MASTER_VOLUME;
     private Dictionary<AudioTypes, float> volumes = new Dictionary<AudioTypes, float>();
 
+    public bool Muted { get; private set; } = false;
+
     public event Action<VolumeManager> OnMasterValueChanged;
     public event Action<AudioTypes, VolumeManager> OnTypeValueChanged;
+    public event Action<bool> OnMuteChange;
+
+    public void SetMuted(bool muted)
+    {
+        Muted = muted;
+        OnMuteChange?.Invoke(muted);
+    }
 
     public float GetVolume(AudioTypes type)
     {

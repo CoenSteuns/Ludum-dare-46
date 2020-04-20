@@ -27,6 +27,9 @@ public class VolumeController : MonoBehaviour
             
             UpdateVolume();
         };
+        source.mute = manager.Muted;
+
+        manager.OnMuteChange += (muted) => source.mute = muted;
         UpdateVolume();
     }
 
