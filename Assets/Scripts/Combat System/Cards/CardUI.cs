@@ -16,7 +16,7 @@ public class CardUI : MonoBehaviour
     public void ChangeUI(Card card)
     {
         if (!card) return;
-        cardImage.sprite = card.Info?.CardImage;
+        //cardImage.sprite = card.Info?.CardImage;
         cardTitle.text = card.Info?.CardTitle;
         cardDescription.text = card.Info?.CardDescription;
     }
