@@ -9,6 +9,9 @@ public class Battle : MonoBehaviour
     private DrawPath pathMovement;
     [SerializeField]
     private Canvas combatCanvas;
+    [SerializeField]
+    private AudioSource source;
+
 
     private CombatCharacter[] characters;
 
@@ -60,5 +63,11 @@ public class Battle : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        source.clip = clip;
+        source.Play();
     }
 }

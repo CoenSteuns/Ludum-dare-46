@@ -7,7 +7,7 @@ public class VolumeManager
 {
 
     private const float START_TYPE_VOLUME = 1;
-    private const float START_MASTER_VOLUME = 0.3f;
+    private const float START_MASTER_VOLUME = 0.2f;
 
     private static VolumeManager instance;
     public static VolumeManager Instance { 
