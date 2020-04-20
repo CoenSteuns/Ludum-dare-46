@@ -10,10 +10,23 @@ public class PlayerAudioManager : MonoBehaviour
     [SerializeField]
     private PathMover playerMovement;
 
+    [SerializeField]
+    private RandomClipController damageAudio;
+    [SerializeField]
+    private Health health;
+
     private void Awake()
     {
         playerMovement.OnStartedWalking += walkingaudio.StartLoop;
         playerMovement.OnStoppedWalking += walkingaudio.StopLoop;
+
+        health.OnHealthChange += (health) =>
+        {
+            if (health.LastChange > 0)
+                return;
+
+            damageAudio.Play();
+        };
     }
 
 }
