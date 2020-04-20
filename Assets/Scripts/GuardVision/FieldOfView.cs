@@ -83,7 +83,6 @@ public class FieldOfView : MonoBehaviour {
                     CombatUI.enabled = true;
                     battleStart.StartBattle(characters);
 					drawPath.enabled = false;
-                    print("spotted");
                     OnSpottted?.Invoke();
                     StopAllCoroutines();
                     enabled = false;
