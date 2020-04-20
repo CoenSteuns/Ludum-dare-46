@@ -45,6 +45,7 @@ public class Battle : MonoBehaviour
     {
         for (int i = 0; i < characters.Length; i++)
         {
+            print("hap");
             characters[i].ClearInventory();
         }
 

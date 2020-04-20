@@ -35,14 +35,14 @@ public class CombatEnemy : CombatCharacter
             currentCard = FindCard(CardType.Healing);
         else if (Calculator.CalculatePercentage(health.Max, health.Current) >= highHealthPercentage)
             currentCard = opponentStunnedRounds > 0 ? FindCard(CardType.Attack) : FindCard(CardType.Healing, false);
-        
-        if(currentCard == null)
+
+        if(currentCard == null && inventory.Cards.Count > 0)
             currentCard = inventory.Cards[0];
 
         if (currentCard.Info.TypeCard == CardType.Stun)
             opponentStunnedRounds = currentCard.Info.PrimaryValue;
 
-        currentCard.Use(battle);
+        currentCard?.Use(battle);
     }
 
     public override void EndTurn()
@@ -55,7 +55,7 @@ public class CombatEnemy : CombatCharacter
         if (health.Current > 0)
             return;
         battle.End();
-        Destroy(gameObject);
+        DestroyImmediate(gameObject);
     }
 
     private Card FindCard(CardType type, bool include = true)

@@ -985,7 +985,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CombatUI
       value: 
-      objectReference: {fileID: 2028833568}
+      objectReference: {fileID: 2028833570}
     - target: {fileID: 1443846321333565463, guid: cdbd7c1de97703741a0f070ca3831d9f,
         type: 3}
       propertyPath: mainCamera
@@ -2217,6 +2217,12 @@ MonoBehaviour:
   inventory: {fileID: 515643651}
   prefab: {fileID: 2208372033564714502, guid: 0caa6ecd35188914cbf05d01972d844e, type: 3}
   parent: {fileID: 1136590139}
+--- !u!1 &705208519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2467246505561314967, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &732237623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1296666786986059202, guid: 5d6c6f20f1eada143ba0700d134c8cc5,
@@ -4301,7 +4307,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CombatUI
       value: 
-      objectReference: {fileID: 2028833568}
+      objectReference: {fileID: 2028833570}
     - target: {fileID: 1443846321333565463, guid: cdbd7c1de97703741a0f070ca3831d9f,
         type: 3}
       propertyPath: mainCamera
@@ -4343,6 +4349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24774b224af9ed4898b416238b6d2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1414243172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5760640933056582730, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1440857046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1296666786986059202, guid: 5d6c6f20f1eada143ba0700d134c8cc5,
@@ -5008,7 +5020,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CombatUI
       value: 
-      objectReference: {fileID: 2028833568}
+      objectReference: {fileID: 2028833570}
     - target: {fileID: 1443846321333565463, guid: cdbd7c1de97703741a0f070ca3831d9f,
         type: 3}
       propertyPath: mainCamera
@@ -5212,7 +5224,7 @@ PrefabInstance:
         type: 3}
       propertyPath: CombatUI
       value: 
-      objectReference: {fileID: 2028833568}
+      objectReference: {fileID: 2028833570}
     - target: {fileID: 1443846321333565463, guid: cdbd7c1de97703741a0f070ca3831d9f,
         type: 3}
       propertyPath: mainCamera
@@ -6219,11 +6231,21 @@ PrefabInstance:
       propertyPath: pathMovement
       value: 
       objectReference: {fileID: 1864124644}
+    - target: {fileID: 3820158593297335243, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: cardHolder
+      value: 
+      objectReference: {fileID: 1414243172}
     - target: {fileID: 4694084401784455218, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 1972238687}
+    - target: {fileID: 4710215145895744747, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: cardHolder
+      value: 
+      objectReference: {fileID: 705208519}
     - target: {fileID: 5931345008755316946, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: health
@@ -6237,9 +6259,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2028833566}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2028833568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2467246505525901172, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+--- !u!223 &2028833570 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2467246505525901175, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
     type: 3}
   m_PrefabInstance: {fileID: 2028833566}
   m_PrefabAsset: {fileID: 0}

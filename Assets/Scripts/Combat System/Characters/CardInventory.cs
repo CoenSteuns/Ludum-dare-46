@@ -8,6 +8,8 @@ public class CardInventory : MonoBehaviour
     private List<Card> cards = new List<Card>();
     public Action OnCardAdded;
 
+    [SerializeField]
+    private GameObject cardHolder;
 
     public List<Card> Cards => cards;
 
@@ -31,9 +33,10 @@ public class CardInventory : MonoBehaviour
 
     public void ClearInventory()
     {
-        for (int i = 0; i < cards.Count; i++)
+        cards.Clear();
+        for (int i = 0; i < cardHolder.transform.childCount; i++)
         {
-            RemoveCard(cards[0]);
+            DestroyImmediate(cardHolder.transform.GetChild(i).gameObject);
         }
     }
 
