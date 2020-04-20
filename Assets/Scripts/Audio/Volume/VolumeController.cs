@@ -11,6 +11,9 @@ public class VolumeController : MonoBehaviour
     [SerializeField]
     public AudioTypes type;
 
+    [SerializeField, Range(0, 1)]
+    private float volume = 1;
+
     private VolumeManager manager;
 
     private void Awake()
@@ -29,6 +32,6 @@ public class VolumeController : MonoBehaviour
 
     private void UpdateVolume()
     {
-        source.volume = manager.GetMasterVolume() * manager.GetVolume(type);
+        source.volume = manager.GetMasterVolume() * manager.GetVolume(type) * volume;
     }
 }
