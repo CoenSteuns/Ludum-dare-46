@@ -7,6 +7,9 @@ using UnityEngine;
 public class PathMover : MonoBehaviour {
 
     [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
     private float speed = 0.05f;
     private Coroutine walkRoutine;
 
@@ -27,6 +30,8 @@ public class PathMover : MonoBehaviour {
     }
 
     public void WalkPath(Vector3[] path) {
+        if (path.Length == 0)
+            return;
         SetPath(path);
         StartWalking();
     }
@@ -47,34 +52,40 @@ public class PathMover : MonoBehaviour {
 
     public IEnumerator WalkPathRoutine(Vector3[] path) {
 
-        path[0] = transform.position;
+        if (path.Length > 0)
+        {
+            path[0] = transform.position;
 
-        float walkedPath = 0;
-        int currentPart = 0;
+            float walkedPath = 0;
+            int currentPart = 0;
 
-        if (path.Length == 0)
-            yield break;
+            if (path.Length == 0)
+                yield break;
 
-        OnStartedWalking?.Invoke();
+            OnStartedWalking?.Invoke();
+            animator.SetBool("isWalking", true);
 
-        while (true) {
+            while (true)
+            {
 
-            float restPath;
-            currentPart = FindCurrentPart(path, walkedPath, out restPath, currentPart);
+                float restPath;
+                currentPart = FindCurrentPart(path, walkedPath, out restPath, currentPart);
 
-            if (restPath < 0) {
-                SetPosition(path[currentPart]);
-                break;
+                if (restPath < 0)
+                {
+                    SetPosition(path[currentPart]);
+                    break;
+                }
+
+                Vector3 dir = (path[currentPart + 1] - path[currentPart]).normalized;
+                SetPosition(path[currentPart] + dir * restPath);
+
+                walkedPath += speed * Time.deltaTime;
+                yield return null;
             }
-
-            Vector3 dir = (path[currentPart + 1] - path[currentPart]).normalized;
-            SetPosition(path[currentPart] + dir * restPath);
-
-            walkedPath += speed * Time.deltaTime;
-            yield return null;
+            animator.SetBool("isWalking", false);
+            OnStoppedWalking?.Invoke();
         }
-
-        OnStoppedWalking?.Invoke();
     }
 
     private int FindCurrentPart(Vector3[] path, float walkedPath, out float restPathLeft, int startIndex = 0) {

@@ -9,10 +9,17 @@ public class BattleUI : MonoBehaviour
     private Sprite[] enemySprites;
 
     [SerializeField]
+    private Color[] enemyColors;
+
+    [SerializeField]
     private Image enemyPortrait;
+
+    [SerializeField]
+    private Image enemyHealthBar;
 
     public void UpdateUI(CombatEnemy enemyCharacter)
     {
         enemyPortrait.sprite = enemySprites[(int)enemyCharacter.ClanType];
+        enemyHealthBar.color = enemyColors[(int)enemyCharacter.ClanType];
     }
 }
