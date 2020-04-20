@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour
 
     public void SetCombat(bool combat)
     {
-        print(combat);
         if (gameOver)
             return;
 

@@ -1487,6 +1487,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 569113400}
+  battle: {fileID: 364576878}
+--- !u!114 &364576878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2467246505652253074, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364576874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1c7bced2babd14984cd8204292da85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &424265523
 GameObject:
   m_ObjectHideFlags: 0
