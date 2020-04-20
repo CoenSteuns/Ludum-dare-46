@@ -18,5 +18,33 @@ public abstract class Card : MonoBehaviour
         inventory.RemoveCard(this);
         battle.NextTurn();
     }
+
+    protected virtual float CheckColor(AttackColorTypes color)
+    {
+        float multiplier = 1;
+        float highMultiplier = 2;
+        float lowMultiplier = 0.5f;
+
+        if (color == info.Color)
+            return multiplier;
+
+        switch (color)
+        {
+            case AttackColorTypes.orange:
+                multiplier = info.Color == AttackColorTypes.blue ? highMultiplier : lowMultiplier;
+                break;
+            case AttackColorTypes.blue:
+                multiplier = info.Color == AttackColorTypes.green ? highMultiplier : lowMultiplier;
+                break;
+            case AttackColorTypes.green:
+                multiplier = info.Color == AttackColorTypes.orange ? highMultiplier : lowMultiplier;
+                break;
+            default:
+                break;
+        }
+
+
+        return multiplier;
+    }
     
 }

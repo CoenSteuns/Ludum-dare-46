@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardInventory : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class CardInventory : MonoBehaviour
         foreach (var card in Cards)
         {
             card.enabled = active;
+            card.GetComponent<Button>().enabled = active;
         }
     }
 }

@@ -15,6 +15,8 @@ public class CombatEnemy : CombatCharacter
 
     private int opponentStunnedRounds = 0;
 
+    public AttackColorTypes ClanType => clanType;
+
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
@@ -30,13 +32,20 @@ public class CombatEnemy : CombatCharacter
             battle.NextTurn(true);
             return;
         }
+        StartCoroutine(PlayCard());
+    }
+
+    private IEnumerator PlayCard()
+    {
+        yield return new WaitForSeconds(1f);
+
         Card currentCard = null;
         if (Calculator.CalculatePercentage(health.Max, health.Current) <= lowHealthPercentage)
             currentCard = FindCard(CardType.Healing);
         else if (Calculator.CalculatePercentage(health.Max, health.Current) >= highHealthPercentage)
             currentCard = opponentStunnedRounds > 0 ? FindCard(CardType.Attack) : FindCard(CardType.Healing, false);
 
-        if(currentCard == null && inventory.Cards.Count > 0)
+        if (currentCard == null && inventory.Cards.Count > 0)
             currentCard = inventory.Cards[0];
 
         if (currentCard.Info.TypeCard == CardType.Stun)

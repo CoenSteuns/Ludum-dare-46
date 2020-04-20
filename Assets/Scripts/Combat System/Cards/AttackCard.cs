@@ -8,7 +8,15 @@ public class AttackCard : Card
     {
         CombatCharacter currentPawn = battle.GetCharacter();
         CombatCharacter enemy = battle.GetCharacter(false);
-        enemy.Health.Damage(Info.PrimaryValue);
+
+        int damage = info.PrimaryValue;
+        if (enemy is CombatEnemy)
+        {
+            CombatEnemy currentEnemy = (CombatEnemy)enemy;
+            damage = (int)Mathf.Round(damage * CheckColor(currentEnemy.ClanType));
+        }
+
+        enemy.Health.Damage(damage);
 
         base.Use(battle);
     }
