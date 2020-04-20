@@ -15,6 +15,8 @@ public abstract class Card : MonoBehaviour
 
     public virtual void Use(Battle battle)
     {
+
+        PlaySfx(battle);
         inventory.RemoveCard(this);
         battle.NextTurn();
     }
@@ -45,6 +47,14 @@ public abstract class Card : MonoBehaviour
 
 
         return multiplier;
+    }
+
+    protected virtual void PlaySfx(Battle battle)
+    {
+        if (info.SFX == null)
+            return;
+
+        battle.PlaySound(info.SFX);
     }
     
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class FieldOfView : MonoBehaviour {
 
@@ -35,6 +36,8 @@ public class FieldOfView : MonoBehaviour {
 	private MonoBehaviour drawPath;
 
 	private CombatCharacter[] characters = new CombatCharacter[2];
+
+    public event Action OnSpottted;
 
 	void Start() {
 		drawPath = mainCamera.GetComponent<DrawPath>();
@@ -80,8 +83,7 @@ public class FieldOfView : MonoBehaviour {
                     CombatUI.enabled = true;
                     battleStart.StartBattle(characters);
 					drawPath.enabled = false;
-					
-
+                    OnSpottted?.Invoke();
                     StopAllCoroutines();
                     enabled = false;
 				}

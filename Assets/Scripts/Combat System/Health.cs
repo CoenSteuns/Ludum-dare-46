@@ -11,9 +11,11 @@ public class Health : MonoBehaviour {
     [SerializeField]
     private int current;
 
+    private int lastChange;
+
     public int Max => maxHealth;
     public int Current => current;
-
+    public int LastChange => lastChange;
     public bool AtMax => Current == Max;
 
     public event Action<Health> OnHealthChange;
@@ -37,6 +39,7 @@ public class Health : MonoBehaviour {
         if (newHealth == current)
             return;
 
+        lastChange = newHealth - current;
         current = newHealth;
         OnHealthChange?.Invoke(this);
     }

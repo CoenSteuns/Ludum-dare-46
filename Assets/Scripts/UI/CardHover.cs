@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class CardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    private Vector2 originalsize;
+    private Vector3 originalsize;
     private RectTransform rectTransform;
 
     [SerializeField]
@@ -15,17 +15,17 @@ public class CardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private void Awake()
     {
         rectTransform = transform as RectTransform;
-        originalsize = rectTransform.sizeDelta;
+        originalsize = rectTransform.localScale;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        rectTransform.sizeDelta = originalsize * hoverSizeMultiplier;
+        rectTransform.localScale = originalsize * hoverSizeMultiplier;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        rectTransform.sizeDelta = originalsize;
+        rectTransform.localScale = originalsize;
     }
 
 }

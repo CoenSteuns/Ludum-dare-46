@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class UsableUI : MonoBehaviour, IPointerClickHandler
 {
@@ -20,11 +21,14 @@ public class UsableUI : MonoBehaviour, IPointerClickHandler
 
     private bool isEnabled = true;
 
+    public UnityEvent OnClick;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!isEnabled)
             return;
         OnUse?.Invoke(type);
+        OnClick?.Invoke();
     }
 
     public void SetItem(Sprite icon, Type type)
