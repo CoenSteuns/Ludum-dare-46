@@ -65,7 +65,7 @@ public class Battle : MonoBehaviour
         }
 
         OnBattleEnded?.Invoke();
-        pathMovement.enabled = true;
+        pathMovement.AllowDraw = true;
         combatCanvas.enabled = false;
     }
 

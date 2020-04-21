@@ -33,7 +33,7 @@ public class FieldOfView : MonoBehaviour {
 	//Assign them in the editor, used to turn on/off the things to go into combat.
 	[SerializeField]private Canvas CombatUI;
 	[SerializeField]private GameObject mainCamera;
-	private MonoBehaviour drawPath;
+	private DrawPath drawPath;
 
 	private CombatCharacter[] characters = new CombatCharacter[2];
 
@@ -82,7 +82,7 @@ public class FieldOfView : MonoBehaviour {
 					characters[1] = battleGuard;
                     CombatUI.enabled = true;
                     battleStart.StartBattle(characters);
-					drawPath.enabled = false;
+					drawPath.AllowDraw = false;
                     OnSpottted?.Invoke();
                     StopAllCoroutines();
                     enabled = false;

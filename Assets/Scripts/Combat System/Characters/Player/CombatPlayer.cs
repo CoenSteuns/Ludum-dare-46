@@ -11,8 +11,8 @@ public class CombatPlayer : CombatCharacter
     public override void StartBattle(Battle battle)
     {
         this.battle = battle;
-        dealer.ClearHand();
-        dealer.DealCards(4);
+        dealer?.ClearHand();
+        dealer?.DealCards(4);
     }
 
     public override void StartTurn()

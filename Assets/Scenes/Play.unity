@@ -2176,6 +2176,30 @@ Transform:
   m_Father: {fileID: 1734801333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534618606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8885885355113629867, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52c030adaf2b9d4480799d996b2623b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &534618607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4710215145895744747, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24774b224af9ed4898b416238b6d2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &543867043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,6 +7002,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6394839396112303996, guid: 3aac0d0417156aa41805325c3d9c7c18,
+        type: 3}
+      propertyPath: dealer
+      value: 
+      objectReference: {fileID: 534618606}
+    - target: {fileID: 6394839396112303996, guid: 3aac0d0417156aa41805325c3d9c7c18,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 534618607}
+    - target: {fileID: 6394839396112303996, guid: 3aac0d0417156aa41805325c3d9c7c18,
+        type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 301665519}
+    - target: {fileID: 6394839396112303996, guid: 3aac0d0417156aa41805325c3d9c7c18,
+        type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 8087409948974280137}
     - target: {fileID: 6394839396569757992, guid: 3aac0d0417156aa41805325c3d9c7c18,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7008,6 +7052,11 @@ PrefabInstance:
       propertyPath: drawPath
       value: 
       objectReference: {fileID: 1864124644}
+    - target: {fileID: 8309070410520803324, guid: 3aac0d0417156aa41805325c3d9c7c18,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aac0d0417156aa41805325c3d9c7c18, type: 3}
 --- !u!1 &1951072152
