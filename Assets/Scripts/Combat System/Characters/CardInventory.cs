@@ -12,7 +12,12 @@ public class CardInventory : MonoBehaviour
     [SerializeField]
     private GameObject cardHolder;
 
+    [SerializeField]
+    private int maxCardAmount = 3;
+
     public List<Card> Cards => cards;
+
+    public int MaxCardAmount { get => maxCardAmount; set => maxCardAmount = value; }
 
     public void AddCard(Card card)
     {

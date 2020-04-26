@@ -16,9 +16,9 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: 0f0acb3e72b6ccc4a90a13b2b1130523, type: 3}
   typeCard: 0
   cardTitle: Swootery
-  cardDescription: 'Swittery Swootery <br>
+  cardDescription: 'Swittery Swootery
 
-    Damages the enemy for 3 damage'
+    Attack for 3 damage'
   color: 0
   primaryValue: 3
   secondaryValue: 0

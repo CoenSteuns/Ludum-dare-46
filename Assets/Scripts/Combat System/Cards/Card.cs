@@ -34,13 +34,13 @@ public abstract class Card : MonoBehaviour
         switch (color)
         {
             case AttackColorTypes.orange:
-                multiplier = info.Color == AttackColorTypes.blue ? highMultiplier : lowMultiplier;
+                multiplier = info.Color == AttackColorTypes.blue ? lowMultiplier : highMultiplier;
                 break;
             case AttackColorTypes.blue:
-                multiplier = info.Color == AttackColorTypes.green ? highMultiplier : lowMultiplier;
+                multiplier = info.Color == AttackColorTypes.green ? lowMultiplier : highMultiplier;
                 break;
             case AttackColorTypes.green:
-                multiplier = info.Color == AttackColorTypes.orange ? highMultiplier : lowMultiplier;
+                multiplier = info.Color == AttackColorTypes.orange ? lowMultiplier : highMultiplier;
                 break;
             default:
                 break;

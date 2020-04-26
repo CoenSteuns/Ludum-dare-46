@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Fresh Fish
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 0}
   typeCard: 1
   cardTitle: Fresh Fish
-  cardDescription: '<br>
+  cardDescription: 'Fish from the sea!
 
     Heals the player for 5 health'
   color: 1

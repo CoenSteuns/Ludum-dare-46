@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Healing Potion
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 0}
   typeCard: 1
   cardTitle: Healing Potion
-  cardDescription: 'Sluuurp Ah thats better<br>
+  cardDescription: 'Sluuurp Ah thats better
 
     Heals the player for 5 health'
   color: 2

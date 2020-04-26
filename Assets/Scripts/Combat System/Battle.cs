@@ -74,7 +74,7 @@ public class Battle : MonoBehaviour
         if(hasTurn)
             return characters[turnId];
 
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < characters.Length; i++) //todo this wont work with multiple enemies
         {
             if (i != turnId)
                 return characters[i];

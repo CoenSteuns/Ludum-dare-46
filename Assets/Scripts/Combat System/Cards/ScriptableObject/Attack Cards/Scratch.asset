@@ -16,9 +16,9 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: 0f0acb3e72b6ccc4a90a13b2b1130523, type: 3}
   typeCard: 0
   cardTitle: Scratch
-  cardDescription: 'Scratcheroooo! <br>
+  cardDescription: 'Scratcheroooo!
 
-    Damages an enemy for 5 damage'
+    Attack for 5 damage'
   color: 1
   primaryValue: 5
   secondaryValue: 0

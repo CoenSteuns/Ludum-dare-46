@@ -16,9 +16,9 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: c2219498ee0b42c4db8c4b251970b3aa, type: 3}
   typeCard: 0
   cardTitle: Bending Punch
-  cardDescription: 'Falcon Punch! <br>
+  cardDescription: 'Falcon Punch!
 
-    Damages the enemy for 3 damage'
+    Attack for 5 damage'
   color: 0
   primaryValue: 5
   secondaryValue: 0

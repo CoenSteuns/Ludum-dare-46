@@ -27,7 +27,6 @@ public class VolumeController : MonoBehaviour
             
             UpdateVolume();
         };
-        print(source + " " + manager);
         if (source == null)
             source = gameObject.GetComponent<AudioSource>();
         source.mute = manager.Muted;

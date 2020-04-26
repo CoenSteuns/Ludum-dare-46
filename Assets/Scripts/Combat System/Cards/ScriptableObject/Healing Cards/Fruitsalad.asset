@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Fruitsalad
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 0}
   typeCard: 1
   cardTitle: Fruit Salad
-  cardDescription: 'Nom nom nom, what a nice salad! <br>
+  cardDescription: 'Nommm what a nice salad!
 
-    Heals the player for
-    5 health'
+    Heals the player for 5 health'
   color: 0
   primaryValue: 5
   secondaryValue: 0

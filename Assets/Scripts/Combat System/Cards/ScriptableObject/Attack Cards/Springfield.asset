@@ -16,9 +16,9 @@ MonoBehaviour:
   sfx: {fileID: 8300000, guid: fb38902c4a21554409ff8d584a7a83c8, type: 3}
   typeCard: 0
   cardTitle: Springfield
-  cardDescription: 'BRRRRR <br>
+  cardDescription: 'BRRRRR
 
-    Damages the enemy for 5 damage'
+    Attack for 5 damage'
   color: 2
   primaryValue: 5
   secondaryValue: 0

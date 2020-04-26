@@ -24,13 +24,13 @@ public class CombatPlayer : CombatCharacter
             battle.NextTurn(true);
             return;
         }
-
+        dealer.DealCards(1);
         inventory.ActivateCards(true);
     }
 
     public override void EndTurn()
     {
-        dealer.DealCards(1);
+        
         inventory.ActivateCards(false);
     }
 

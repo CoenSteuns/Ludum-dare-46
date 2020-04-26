@@ -13,6 +13,9 @@ public class CombatEnemy : CombatCharacter
     [SerializeField]
     private static int highHealthPercentage = 70;
 
+    [SerializeField]
+    private int extraStunWait = 2;
+
     private int opponentStunnedRounds = 0;
 
     public AttackColorTypes ClanType => clanType;
@@ -32,6 +35,7 @@ public class CombatEnemy : CombatCharacter
             battle.NextTurn(true);
             return;
         }
+        dealer.DealCards(1, clanType);
         StartCoroutine(PlayCard());
     }
 
@@ -49,14 +53,16 @@ public class CombatEnemy : CombatCharacter
             currentCard = inventory.Cards[0];
 
         if (currentCard.Info.TypeCard == CardType.Stun)
-            opponentStunnedRounds = currentCard.Info.PrimaryValue;
+        {
+            opponentStunnedRounds = currentCard.Info.PrimaryValue + extraStunWait;
+        }
 
         currentCard?.Use(battle);
     }
 
     public override void EndTurn()
     {
-        dealer.DealCards(1, clanType);
+        
     }
 
     protected override void CheckHealth(Health health)

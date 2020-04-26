@@ -1301,6 +1301,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318779302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6394839396112303943, guid: 3aac0d0417156aa41805325c3d9c7c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 1926211317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374431045f7098a428f6a507c45d6c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &320216408
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,7 +4154,7 @@ PrefabInstance:
         type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2019567531}
     - target: {fileID: 7750427768970717286, guid: 6964439cc5592a641b09139bd6af6252,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -4221,7 +4233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2019567531}
     - target: {fileID: 7750427768970717286, guid: 6964439cc5592a641b09139bd6af6252,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -4762,7 +4774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300092075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9395752, y: 51.83, z: -91.11}
+  m_LocalPosition: {x: -3.9395752, y: 51.83, z: -91.94}
   m_LocalScale: {x: 11, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241173036}
@@ -5377,7 +5389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: booster
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 318779302}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5ad0a2ce7a05334cbce5e3614c29da5, type: 3}
 --- !u!4 &1493509625 stripped
@@ -7526,6 +7538,11 @@ PrefabInstance:
       propertyPath: cardHolder
       value: 
       objectReference: {fileID: 1414243172}
+    - target: {fileID: 3820158593297335243, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: maxCardAmount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3931944681966677320, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: cardPrefab

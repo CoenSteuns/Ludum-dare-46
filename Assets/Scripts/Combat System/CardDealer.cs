@@ -31,6 +31,8 @@ public class CardDealer : MonoBehaviour
 
     private void DealCard(AttackColorTypes type)
     {
+        if (inventory.Cards.Count >= inventory.MaxCardAmount)
+            return;
         inventory.AddCard(GetRandomCard(type));
     }
 

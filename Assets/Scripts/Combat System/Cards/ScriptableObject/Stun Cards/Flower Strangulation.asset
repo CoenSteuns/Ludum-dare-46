@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Flower Strangulation
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
+  sfx: {fileID: 0}
   typeCard: 2
   cardTitle: Flower Strangulation
-  cardDescription: 'You strangle your opponent with your flower garland! <br>
+  cardDescription: 'You strangle with your flower garland!
 
-    Stun
-    the enemy for 2 turns'
+    Stun for 2 turns'
   color: 1
   primaryValue: 2
   secondaryValue: 0
