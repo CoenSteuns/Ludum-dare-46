@@ -18,7 +18,7 @@ MonoBehaviour:
   cardTitle: Stun Gun
   cardDescription: 'Zzzzt!
 
-    Stun the enemy for 2 turns'
+    Stun for 2 turns'
   color: 2
   primaryValue: 2
   secondaryValue: 0

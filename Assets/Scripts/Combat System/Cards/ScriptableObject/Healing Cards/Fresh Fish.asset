@@ -18,7 +18,7 @@ MonoBehaviour:
   cardTitle: Fresh Fish
   cardDescription: 'Fish from the sea!
 
-    Heals the player for 5 health'
+    Heals for 5 health'
   color: 1
   primaryValue: 5
   secondaryValue: 0

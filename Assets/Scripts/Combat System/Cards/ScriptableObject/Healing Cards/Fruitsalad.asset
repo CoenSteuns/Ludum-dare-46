@@ -18,7 +18,7 @@ MonoBehaviour:
   cardTitle: Fruit Salad
   cardDescription: 'Nommm what a nice salad!
 
-    Heals the player for 5 health'
+    Heals for 5 health'
   color: 0
   primaryValue: 5
   secondaryValue: 0
