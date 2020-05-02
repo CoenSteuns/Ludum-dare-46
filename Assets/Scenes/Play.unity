@@ -1891,6 +1891,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1c7bced2babd14984cd8204292da85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &364576885 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8281697975251634235, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482726662
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1057080486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3928,7 +3934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca502938d8cd7148bf5bfd0e55f6845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battle: {fileID: 0}
   health: {fileID: 2019567531}
+  isEnemy: 0
   healthBar: {fileID: 834716377}
 --- !u!114 &1058230383
 MonoBehaviour:
@@ -7544,54 +7552,59 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
-      propertyPath: enemyColors.Array.data[1].r
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: battle
+      value: 
+      objectReference: {fileID: 364576878}
     - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
-      propertyPath: enemyColors.Array.data[1].g
-      value: 0.5144286
-      objectReference: {fileID: 0}
+      propertyPath: battleUIGroup
+      value: 
+      objectReference: {fileID: 364576885}
     - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
-      propertyPath: enemyColors.Array.data[1].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
-        type: 3}
-      propertyPath: enemyColors.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
-        type: 3}
-      propertyPath: enemyColors.Array.data[2].r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
-        type: 3}
-      propertyPath: enemyColors.Array.data[2].g
-      value: 0.6603774
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
-        type: 3}
-      propertyPath: enemyColors.Array.data[2].b
-      value: 0.12829617
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399395486740954256, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
-        type: 3}
-      propertyPath: enemyColors.Array.data[2].a
-      value: 1
+      propertyPath: transitionTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4694084401784455218, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 2019567531}
+    - target: {fileID: 4694084401784455218, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: battle
+      value: 
+      objectReference: {fileID: 364576878}
     - target: {fileID: 4710215145895744747, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: cardHolder
       value: 
       objectReference: {fileID: 705208519}
+    - target: {fileID: 5069025973088719208, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069025973088719208, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069025973088719208, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069025973088719208, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069025973088719208, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5119699232077818042, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7630,6 +7643,31 @@ PrefabInstance:
     - target: {fileID: 5298194181991585668, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405725437771318343, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405725437771318343, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405725437771318343, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405725437771318343, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405725437771318343, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5907140383092449225, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
@@ -7657,6 +7695,66 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1806246196}
+    - target: {fileID: 5931345008755316946, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: battle
+      value: 
+      objectReference: {fileID: 364576878}
+    - target: {fileID: 5931345008755316946, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: isEnemy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710340087359111, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710340087359111, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710340087359111, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710340087359111, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216710340087359111, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564563791754703784, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564563791754703784, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564563791754703784, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564563791754703784, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564563791754703784, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6761969875901754542, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7695,6 +7793,11 @@ PrefabInstance:
     - target: {fileID: 7095690821485716762, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281697975251634235, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9167704372244072410, guid: 94778bb28d8532e4a9fc2e3ad114e39e,

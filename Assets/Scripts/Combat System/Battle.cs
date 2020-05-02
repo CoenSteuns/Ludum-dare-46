@@ -16,9 +16,6 @@ public class Battle : MonoBehaviour
     private BattleUI battleUI;
 
     [SerializeField]
-    private HealthUI enemyHealthUI; //TODO no UI stuff in Battle!
-
-    [SerializeField]
     private UsedCardInfoUI[] usedCardInfoUIs;
 
     private CombatCharacter[] characters;
@@ -34,9 +31,6 @@ public class Battle : MonoBehaviour
     {
         battleEnded = false;
         this.characters = characters;
-
-        battleUI.UpdateUI(characters[1] as CombatEnemy); //TODO This will break if we change FieldOfView
-        enemyHealthUI.SetHealth(characters[1].Health);
 
         for (int i = 0; i < characters.Length; i++)
         {

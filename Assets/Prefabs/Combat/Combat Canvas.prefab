@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 2467246505525901175}
   - component: {fileID: 2467246505525901174}
   - component: {fileID: 2467246505525901173}
+  - component: {fileID: 8281697975251634235}
   - component: {fileID: 2467246505652253074}
   - component: {fileID: 4399395486740954256}
   - component: {fileID: 364576876}
@@ -343,6 +344,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &8281697975251634235
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467246505525901172}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &2467246505652253074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +372,7 @@ MonoBehaviour:
   combatCanvas: {fileID: 2467246505525901175}
   source: {fileID: 364576876}
   battleUI: {fileID: 4399395486740954256}
+  enemyHealthUI: {fileID: 0}
   usedCardInfoUIs:
   - {fileID: 2206812389190179422}
   - {fileID: 2470488323717198063}
@@ -380,8 +394,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b0ff17f62cad6f04e9faf449577af6b0, type: 3}
   enemyColors:
   - {r: 1, g: 0.6509804, b: 0, a: 1}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0.5144286, b: 1, a: 1}
+  - {r: 0, g: 0.6603774, b: 0.12829617, a: 1}
   enemyPortrait: {fileID: 3551521132376967233}
   enemyHealthBar: {fileID: 3551521132311967068}
 --- !u!82 &364576876
@@ -1112,13 +1126,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5405725437771318343}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1328,13 +1342,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6216710340087359111}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1692,13 +1706,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6564563791754703784}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1993,13 +2007,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5069025973088719208}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
