@@ -25,10 +25,19 @@ public class CombatPlayer : CombatCharacter
 
         if (stunnedTime > 0)
         {
+            isStunned = true;
             stunnedTime -= 1;
+            OnStun?.Invoke("Stunned", true);
             battle.NextTurn(true);
             return;
         }
+
+        if (isStunned)
+        {
+            isStunned = false;
+            OnStun?.Invoke(" ", false);
+        }
+
         dealer.DealCards(1);
         inventory.ActivateCards(true);
     }

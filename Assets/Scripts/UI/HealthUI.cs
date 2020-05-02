@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthUI : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class HealthUI : MonoBehaviour {
     private Health health;
 
     [SerializeField]
+    private TextMeshProUGUI status;
+
+    [SerializeField]
     private bool isEnemy = false;
 
     [SerializeField]
@@ -20,17 +24,21 @@ public class HealthUI : MonoBehaviour {
     private void Awake() {
         if (isEnemy)
             battle.OnBattleStarted += SetEnemyHealth;
+        else
+            health.gameObject.GetComponent<CombatCharacter>().OnStun += UpdateStatus;
     }
 
     private void SetEnemyHealth(CombatCharacter[] characters)
     {
         if (!isEnemy)
             return;
+
         for (int i = 0; i < characters.Length; i++)
         {
             if(characters[i] is CombatEnemy)
                 SetHealth(characters[i].Health);
         }
+        health.gameObject.GetComponent<CombatCharacter>().OnStun += UpdateStatus;
     }
 
     public void SetHealth(Health health) {
@@ -41,6 +49,12 @@ public class HealthUI : MonoBehaviour {
         health.OnHealthChange += UpdateHealth;
         this.health = health;
         RefreshHealth();
+    }
+
+    private void UpdateStatus(string statusText, bool isActive)
+    {
+        status?.gameObject?.SetActive(isActive);
+        status.text = statusText;
     }
 
     private void UpdateHealth(Health health)

@@ -3936,6 +3936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battle: {fileID: 0}
   health: {fileID: 2019567531}
+  status: {fileID: 0}
   isEnemy: 0
   healthBar: {fileID: 834716377}
 --- !u!114 &1058230383
@@ -4370,7 +4371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -460, y: 20}
+  m_AnchoredPosition: {x: -459.9995, y: 20}
   m_SizeDelta: {x: -960, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1136590140
@@ -7319,6 +7320,31 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 569113400}
+    - target: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1005201065602233301, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7337,6 +7363,26 @@ PrefabInstance:
     - target: {fileID: 1005201065602233301, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156534197422573403, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156534197422573403, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156534197422573403, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156534197422573403, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1221097568156490848, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
@@ -7543,6 +7589,26 @@ PrefabInstance:
         type: 3}
       propertyPath: maxCardAmount
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906391802629539088, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906391802629539088, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906391802629539088, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906391802629539088, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3931944681966677320, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
@@ -7798,7 +7864,7 @@ PrefabInstance:
     - target: {fileID: 8281697975251634235, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9167704372244072410, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
         type: 3}

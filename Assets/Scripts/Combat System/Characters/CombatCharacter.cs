@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Health))]
 public abstract class CombatCharacter : MonoBehaviour
@@ -15,11 +16,14 @@ public abstract class CombatCharacter : MonoBehaviour
 
     protected Battle battle;
 
+    protected bool isStunned = false;
     protected int stunnedTime = 0;
 
     public Health Health => health;
 
     public int StunnedTime { get => stunnedTime; set => stunnedTime = value; }
+
+    public Action<String, bool> OnStun;
 
     private void Awake()
     {
