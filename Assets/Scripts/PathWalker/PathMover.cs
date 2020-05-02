@@ -10,6 +10,9 @@ public class PathMover : MonoBehaviour {
     private Animator animator;
 
     [SerializeField]
+    private CombatPlayer combatPlayer;
+
+    [SerializeField]
     private float speed = 0.05f;
     private Coroutine walkRoutine;
 
@@ -37,7 +40,7 @@ public class PathMover : MonoBehaviour {
     }
 
     public void StartWalking() {
-
+        combatPlayer.OnBattleStart += StopWalking;
         walkRoutine = StartCoroutine(WalkPathRoutine(Path));
     }
 
@@ -45,6 +48,7 @@ public class PathMover : MonoBehaviour {
         if (walkRoutine == null)
             return;
 
+        animator.SetBool("isWalking", false);
         OnStoppedWalking?.Invoke();
         StopCoroutine(walkRoutine);
         walkRoutine = null;
