@@ -25,7 +25,10 @@ public class HealthUI : MonoBehaviour {
         if (isEnemy)
             battle.OnBattleStarted += SetEnemyHealth;
         else
+        {
+            SetHealth(health);
             health.gameObject.GetComponent<CombatCharacter>().OnStun += UpdateStatus;
+        }
     }
 
     private void SetEnemyHealth(CombatCharacter[] characters)
