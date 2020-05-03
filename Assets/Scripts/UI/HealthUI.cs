@@ -13,7 +13,7 @@ public class HealthUI : MonoBehaviour {
     private Health health;
 
     [SerializeField]
-    private TextMeshProUGUI status;
+    private TextMeshProUGUI status, healthText;
 
     [SerializeField]
     private bool isEnemy = false;
@@ -57,7 +57,7 @@ public class HealthUI : MonoBehaviour {
     private void UpdateStatus(string statusText, bool isActive)
     {
         status?.gameObject?.SetActive(isActive);
-        status.text = statusText;
+        status?.SetText(statusText);
     }
 
     private void UpdateHealth(Health health)
@@ -67,5 +67,6 @@ public class HealthUI : MonoBehaviour {
 
     public void RefreshHealth() {
         healthBar.fillAmount = 1f / health.Max * health.Current;
+        healthText?.SetText($"{health.Current}");
     }
 }
