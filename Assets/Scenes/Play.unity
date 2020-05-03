@@ -3934,9 +3934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca502938d8cd7148bf5bfd0e55f6845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battle: {fileID: 0}
+  battle: {fileID: 364576878}
   health: {fileID: 2019567531}
-  status: {fileID: 0}
+  status: {fileID: 1193795513}
   isEnemy: 0
   healthBar: {fileID: 834716377}
 --- !u!114 &1058230383
@@ -4468,6 +4468,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6c6f20f1eada143ba0700d134c8cc5, type: 3}
+--- !u!114 &1193795513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 476361084391505636, guid: 94778bb28d8532e4a9fc2e3ad114e39e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028833566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1233646122
 PrefabInstance:
   m_ObjectHideFlags: 0
