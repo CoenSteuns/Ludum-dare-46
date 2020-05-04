@@ -6914,10 +6914,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864124638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b73ab6075f93384cbabe005520d2275, type: 3}
+  m_Script: {fileID: 11500000, guid: 150cd8506e0cdbf4493ad2af14483ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  target: {fileID: 2019567526}
+  speed: 5
+  ignoreX: 0
+  ignoreY: 1
+  ignoreZ: 0
 --- !u!1 &1875423821
 GameObject:
   m_ObjectHideFlags: 0
