@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DrawPathUI : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class DrawPathUI : MonoBehaviour
     private DrawPath path;
 
     [SerializeField]
-    private TextMeshProUGUI text;
+    private Image bar;
 
     private void Awake()
     {
@@ -18,6 +19,6 @@ public class DrawPathUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        text.SetText($"{(int)path.CurrentPathLength}/{(int)path.MaxPathLenth}");
+        bar.fillAmount = 1 - (1 / path.MaxPathLenth * path.CurrentPathLength); 
     }
 }
